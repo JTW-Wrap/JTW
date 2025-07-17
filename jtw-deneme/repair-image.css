@@ -1,0 +1,243 @@
+/* =============================
+   TEMEL DEĞERLER & KÖK STİLLER
+============================= */
+:root {
+  --red: #ff0015;
+}
+
+/* =============================
+   GENEL YAPI
+============================= */
+.repair-highlight {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
+  padding: 30px 5vw 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Arka plan resmi container’ı */
+.repair-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Görsel kendisi */
+.repair-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Görseli kırp ama alanı tamamen doldur */
+  object-position: center center; /* Ortalayarak kırp */
+  filter: brightness(0.5);
+}
+
+
+.repair-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* =============================
+   ANİMASYONLU ÖĞELER
+============================= */
+.animate-title,
+.animate-points li,
+.animate-description {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-visible .animate-title {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+.animate-visible .animate-points li:nth-child(1) { transition-delay: 0.4s; }
+.animate-visible .animate-points li:nth-child(2) { transition-delay: 0.6s; }
+.animate-visible .animate-points li:nth-child(3) { transition-delay: 0.8s; }
+.animate-visible .animate-points li:nth-child(4) { transition-delay: 1s; }
+
+.animate-visible .animate-points li,
+.animate-visible .animate-description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-visible .animate-description {
+  transition-delay: 1.2s;
+}
+
+/* =============================
+   YAZI STİLLERİ
+============================= */
+.animate-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+  color: var(--red);
+}
+
+.animate-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.animate-points li {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.animate-description {
+  font-size: clamp(1rem, 3.5vw, 1.5rem);
+  max-width: 600px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* =============================
+   ADVANTAGE BÖLÜMÜ
+============================= */
+.advantage-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 6vh 5vw;
+  gap: 40px;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+
+.advantage-image {
+  flex: 1 1 500px;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.advantage-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.advantage-image:hover img {
+  transform: scale(1.05);
+}
+
+.advantage-text {
+  flex: 1 1 300px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+.advantage-section.visible .advantage-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.advantage-title {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--red);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.advantage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advantage-list li {
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.6s ease;
+}
+
+.advantage-section.visible .advantage-list li:nth-child(1) { opacity: 1; transform: translateX(0); transition-delay: 0.2s; }
+.advantage-section.visible .advantage-list li:nth-child(2) { opacity: 1; transform: translateX(0); transition-delay: 0.4s; }
+.advantage-section.visible .advantage-list li:nth-child(3) { opacity: 1; transform: translateX(0); transition-delay: 0.6s; }
+.advantage-section.visible .advantage-list li:nth-child(4) { opacity: 1; transform: translateX(0); transition-delay: 0.8s; }
+
+.advantage-list li i {
+  color: var(--red);
+  margin-right: 0.7rem;
+  font-size: 1.3rem;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .repair-highlight {
+    padding: 20px 3vw 40px;
+    height: auto;
+  }
+
+  .repair-overlay {
+    position: relative;
+    top: auto;
+    padding: 3vw;
+  }
+
+  .advantage-section {
+    flex-direction: column;
+    padding: 5vh 4vw;
+  }
+
+  .advantage-text {
+    text-align: center;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantage-section {
+    padding: 4vh 3vw;
+  }
+
+  .advantage-list li {
+    justify-content: center;
+  }
+}
