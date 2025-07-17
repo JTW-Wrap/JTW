@@ -1,0 +1,254 @@
+/* Ana bölüm */
+.main-second-image-section {
+  position: relative; /* Eklendi: .information için konum referansı */
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+  font-family: 'Chakra Petch', sans-serif;
+  color: white;
+  box-sizing: border-box; /* zaten vardı */
+}
+
+.image-text-wrapper {
+  display: flex;
+  align-items: flex-start; /* daha stabil hizalama */
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* YAZI - SOLDA */
+.text-column {
+  flex: 1 1 300px; /* Esnek büyür/küçülür minimum 300px */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  user-select: text; /* Değiştirildi: seçilebilir olsun diye */
+  box-sizing: border-box;
+}
+
+.text-column h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin: 0;
+  color: white;
+}
+
+.text-column p {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #eee;
+  line-height: 1.4;
+  user-select: text; /* Değiştirildi: seçilebilir */
+}
+
+/* Bilgi yazısı (position:absolute) */
+.information {
+  position: absolute;
+  bottom: 10px;
+  right: 60px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.4rem;
+  color: white;
+  text-align: left;
+  line-height: 1.4;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  z-index: 5;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* GÖRSEL/VIDEO - SAĞDA */
+.image-card {
+  position: relative;
+  flex: 1 1 400px; /* Esnek büyür/küçülür minimum 400px */
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 4 / 5; /* Genişlik/yükseklik oranı */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgb(117, 8, 8);
+  z-index: 5;
+}
+
+/* Media container (img + video) */
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.media-container img,
+.media-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Başta sadece img görünür */
+.media-container img {
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Hover yapıldığında video aktif olur */
+.media-container video {
+  z-index: 2;
+  opacity: 0;
+}
+
+.image-card:hover .media-container video {
+  opacity: 1;
+}
+
+.image-card:hover .media-container img {
+  opacity: 0;
+}
+
+/* Contact başlığı - görselin üst sol köşesinde */
+.image-card .contact-title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Click for more - sağ alt köşede */
+.image-card .click-more {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 1024px) {
+  .text-column h3 {
+    font-size: 2rem;
+  }
+
+  .text-column p {
+    font-size: 1.1rem;
+  }
+
+  .image-card {
+    min-width: 350px;
+    max-width: 90vw;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .media-container img,
+  .media-container video {
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-second-image-section {
+    padding: 0 15px;
+    margin: 60px auto;
+  }
+
+  .image-text-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .text-column {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .text-column h3 {
+    font-size: 1.8rem;
+  }
+
+  .text-column p {
+    font-size: 1rem;
+  }
+
+  .image-card {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: unset;
+    aspect-ratio: 3 / 4;
+  }
+
+  .media-container {
+    aspect-ratio: 3 / 4;
+  }
+
+  .media-container img,
+  .media-container video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .image-card .contact-title {
+    font-size: 1.4rem;
+    top: 10px;
+    left: 10px;
+  }
+
+  .image-card .click-more {
+    font-size: 0.85rem;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-column h3 {
+    font-size: 1.5rem;
+  }
+
+  .text-column p {
+    font-size: 0.9rem;
+  }
+
+  .image-card .contact-title {
+    font-size: 1.2rem;
+  }
+
+  .image-card .click-more {
+    font-size: 0.75rem;
+  }
+}

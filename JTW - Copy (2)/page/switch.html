@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maintenance Switch Panel</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background: crimson;
+      color: white;
+      user-select: none;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: darkred;
+    }
+    p {
+      max-width: 400px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Maintenance Mode Control</h1>
+
+  <button id="enableBtn">🛠 Enable Maintenance</button>
+  <button id="disableBtn">✅ Disable Maintenance</button>
+
+  <p id="statusText">
+    Current status: <strong id="status">Unknown</strong>
+  </p>
+
+  <script>
+    const statusText = document.getElementById('status');
+    const enableBtn = document.getElementById('enableBtn');
+    const disableBtn = document.getElementById('disableBtn');
+
+    // Mevcut durum
+    let maintenanceMode = localStorage.getItem('maintenanceMode') === 'true';
+
+    function updateStatusText() {
+      if (maintenanceMode) {
+        statusText.textContent = 'Maintenance Enabled';
+        statusText.style.color = 'crimson';
+      } else {
+        statusText.textContent = 'Maintenance Disabled';
+        statusText.style.color = 'limegreen';
+      }
+    }
+
+    function enableMaintenance() {
+      maintenanceMode = true;
+      localStorage.setItem('maintenanceMode', 'true');
+      localStorage.removeItem('redirectedOnce'); // Önceki yönlendirme geçmişini temizle
+      updateStatusText();
+      alert("Maintenance mode enabled.\nVisitors will see the maintenance page.");
+    }
+
+    function disableMaintenance() {
+      maintenanceMode = false;
+      localStorage.setItem('maintenanceMode', 'false');
+      localStorage.removeItem('redirectedOnce'); // Yönlendirmeye izin ver
+      updateStatusText();
+      alert("Maintenance mode disabled.\nVisitors will now be redirected to the main page on refresh.");
+    }
+
+    enableBtn.onclick = enableMaintenance;
+    disableBtn.onclick = disableMaintenance;
+
+    updateStatusText();
+  </script>
+</body>
+</html>

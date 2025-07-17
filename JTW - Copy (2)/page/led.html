@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Kendi fontların burada, Google Fonts Kaldırıldı -->
+  <link rel="stylesheet" href="../style/font.css" />
+
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <title>JTW</title>
+
+  <!-- JavaScript dosyaları defer ile yüklenir -->
+  <script src="../scripts/main-video.js" defer></script>
+  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/language.js" defer></script>
+  <script src="../scripts/location.js" defer></script>
+  <script src="../scripts/switch.js" defer></script>
+
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <link rel="stylesheet" href="../style/film-video.css" />
+  <link rel="stylesheet" href="../style/film-image.css" />
+  <link rel="stylesheet" href="../style/mainbutton.css" />
+  <link rel="stylesheet" href="../style/menu.css" />
+  <link rel="stylesheet" href="../style/main-animation.css" />
+  <link rel="stylesheet" href="../style/downplace.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="main.html" id="center-logo">JTW</a>
+    <div class="main-nav">
+      <a href="index.html" data-en="Home" data-jp="ホーム">Home</a>
+      <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+      <a href="gallery.html" data-en="Gallery" data-jp="ライト">Gallery</a>
+      <a href="led.html" data-en="Modify" data-jp="もうでふぁい">Modify</a>
+      <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+      <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+      <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+      <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+    </div>
+
+    <div class="right-menu">
+      <div class="location-dropdown">
+        <button id="locationButton" class="location-icon" aria-label="Konum Seç">
+          <i class="fas fa-map-marker-alt"></i>
+        </button>
+        <!-- Liste JS tarafından eklenecek -->
+      </div>
+
+      <!-- Dil seçici -->
+      <div id="language-switcher">
+        <span id="lang-en" class="lang-btn active">ENG</span>
+        <span class="lang-separator">/</span>
+        <span id="lang-jp" class="lang-btn">JP</span>
+      </div>
+
+      <!-- User icon -->
+      <a id="userBtn"><i class="fas fa-user"></i></a>
+    </div>
+  </nav>
+  
+  <!-- ANA VIDEO -->
+  <section class="film-image" aria-label="Main film video">
+    <video autoplay muted loop playsinline>
+      <source src="../public/video/wash.2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="main-text">
+      <h1 data-en="Film Your Car" data-jp="車をフィルムで保護">Film Your Car</h1>
+      <p data-en="Protect your car with JTW" data-jp="JTWであなたの車を保護しましょう">Protect your car withe JTW</p>
+    </div>
+  </section>
+  
+  <!-- Film light 1 image -->
+  <section class="main-second-image-section">
+    <div class="image-text-wrapper">
+      <div class="text-column">
+        <h2 data-en="Clear" data-jp="クリア">Clear</h2>
+
+        <p>
+          <strong>
+            <i class="fas fa-lightbulb"></i>
+            <span data-en="Headlight Clarity:" data-jp="ヘッドライトの透明度：">Headlight Clarity:</span>
+          </strong>
+          <span data-en="Keep your vehicle's headlights crystal clear. Engineered to withstand the toughest road conditions, XPEL Clear Headlight Film provides a durable barrier against scratches, UV damage, and debris."
+                data-jp="車のヘッドライトをクリスタルのようにクリアに保ちます。過酷な道路状況に耐える設計で、XPELクリアヘッドライトフィルムは傷、紫外線ダメージ、ゴミから強力に保護します。">
+            Keep your vehicle's headlights crystal clear. Engineered to withstand the toughest road conditions, XPEL Clear Headlight Film provides a durable barrier against scratches, UV damage, and debris.
+          </span>
+        </p>
+        
+        <p>
+          <strong>
+            <i class="fas fa-shield-alt"></i>
+            <span data-en="Scratch-Resistant:" data-jp="傷防止性能：">Scratch-Resistant:</span>
+          </strong>
+          <span data-en="Extends the life of your headlights, safeguarding them from everyday hazards."
+                data-jp="ヘッドライトの寿命を延ばし、日常の危険から守ります。">
+            Extends the life of your headlights, safeguarding them from everyday hazards.
+          </span>
+        </p>
+        
+        <p>
+          <strong>
+            <i class="fas fa-sun"></i>
+            <span data-en="Sun Damage Defense:" data-jp="紫外線ダメージ防止：">Sun Damage Defense:</span>
+          </strong>
+          <span data-en="Protects your headlights from harmful UV rays, preventing yellowing and maintaining a clear, bright appearance."
+                data-jp="有害な紫外線からヘッドライトを守り、黄ばみを防ぎ、明るくクリアな外観を維持します。">
+            Protects your headlights from harmful UV rays, preventing yellowing and maintaining a clear, bright appearance.
+          </span>
+        </p>
+        
+        <p>
+          <strong>
+            <i class="fas fa-eye"></i>
+            <span data-en="Clear Finish:" data-jp="クリア仕上げ：">Clear Finish:</span>
+          </strong>
+          <span data-en="Enjoy uncompromised clarity with a film that's nearly undetectable, preserving the original look of your headlights."
+                data-jp="ほとんど目立たないフィルムで妥協のない透明度を楽しみ、ヘッドライトの元の見た目を保ちます。">
+            Enjoy uncompromised clarity with a film that's nearly undetectable, preserving the original look of your headlights.
+          </span>
+        </p>
+        
+        <p>
+          <strong>
+            <i class="fas fa-water"></i>
+            <span data-en="Bubble-Free:" data-jp="気泡なし：">Bubble-Free:</span>
+          </strong>
+          <span data-en="Designed for easy application, ensuring a smooth and flawless fit every time."
+                data-jp="簡単に施工できるよう設計されており、毎回スムーズで完璧な仕上がりを保証します。">
+            Designed for easy application, ensuring a smooth and flawless fit every time.
+          </span>
+        </p>
+      </div>
+        
+      <!-- Sağda resim + video alanı -->
+      <div class="image-card">
+        <div class="media-container">
+          <img src="../public/image/cors.3.jpg" alt="Featured Car" />
+          <video autoplay muted loop playsinline>
+            <source src="../public/video/wash.3.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Film light 2 image -->
+  <section class="main-second-image-section">
+    <div class="image-text-wrapper">
+      <div class="text-column">
+        <h2>Slate Smoke 25</h2>
+      
+        <p><strong><i class="fas fa-eye-slash"></i> 25% Smoked Tint:</strong> Enhance your vehicle's look with a sophisticated smoked tint that adds a unique touch of style.</p>
+      
+        <p><strong><i class="fas fa-sun"></i> Anti-Yellowing:</strong> Protects against harmful UV rays, preventing discoloration and ensuring long-lasting clarity.</p>
+      
+        <p><strong><i class="fas fa-water"></i> Bubble-Free:</strong> Designed for bubble-free application, providing a seamless fit that looks as though you purchased new headlights.</p>
+      </div>
+      
+      <!-- Sağda resim + video alanı -->
+      <div class="image-card">
+        <div class="media-container">
+          <img src="../public/image/car.4.jpg" alt="Featured Car" />
+          <video autoplay muted loop playsinline>
+            <source src="../public/video/wash.3.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Downplace link -->
+   <footer class="site-footer">
+    <div class="footer-wrapper">
+
+      <!-- SOLDAN: FILMS + SERVICES -->
+      <div class="footer-left-section">
+        <div class="footer-group">
+          <h4>SERVICES</h4>
+          <a href="film-protect.html">Films</a>
+          <a href="car-wash.html">Car Wash</a>
+          <a href="repair.html">Repair</a>
+          <a href="led.html">Modify</a>
+        </div>
+
+        <div class="footer-group">
+          <h4>NEW</h4>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <!-- ORTA LOGO -->
+      <div class="footer-center-section">
+        <div class="footer-logo">JTW</div>
+      </div>
+
+      <!-- SAĞDAN: COMPANY + SOCIAL -->
+      <div class="footer-right-section">
+        <div class="footer-group">
+          <h4>COMPANY</h4>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-group">
+          <h4>SOCIAL</h4>
+          <div class="social-icons vertical">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a>
+            <a href="https://www.x.com"><i class="fab fa-x-twitter" aria-hidden="true"></i> X</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.wechat.com"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-copy">&copy; 2025 JTW. All rights reserved.</div>
+  </footer>
+</body>
+</html>
