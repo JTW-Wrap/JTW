@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-en="JTW" data-jp="JTW" data-cn="JTW">JTW</title>
+
+  <!-- Fontlar ve ikonlar -->
+  <link rel="stylesheet" href="../style/font.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <link rel="stylesheet" href="../style/film-video.css" />
+  <link rel="stylesheet" href="../style/film-image.css" />
+  <link rel="stylesheet" href="../style/film-info.css" />
+  <link rel="stylesheet" href="../style/mainbutton.css" />
+  <link rel="stylesheet" href="../style/main-animation.css" />
+  <link rel="stylesheet" href="../style/downplace.css" />
+  <link rel="stylesheet" href="../style/film-section.css" />
+
+  <!-- JavaScript dosyaları -->
+  <script src="../scripts/main-video.js" defer></script>
+  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/language.js" defer></script>
+  <script src="../scripts/location.js" defer></script>
+  <script src="../scripts/switch.js" defer></script>
+  <script src="../scripts/section.js" defer></script>
+  <script src="../scripts/slider.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="main.html" id="center-logo">JTW</a>
+    <div class="main-nav">
+      <a href="main.html" data-en="Home" data-jp="ホーム" >Home</a>
+      <a href="film-protect.html" data-en="Films" data-jp="フィルム" >Films</a>
+      <a href="gallery.html" data-en="Gallery" data-jp="ライト" >Gallery</a>
+      <a href="led.html" data-en="Modify" data-jp="もうでふぁい" >Modify</a>
+      <a href="repair.html" data-en="Repair" data-jp="修理" >Repair</a>
+      <a href="car-wash.html" data-en="Car Wash" data-jp="洗車" >Car Wash</a>
+      <a href="about.html" data-en="About Us" data-jp="私たちについて" >About Us</a>
+      <a href="contact.html" data-en="Contact" data-jp="お問い合わせ" >Contact</a>
+    </div>
+
+    <div class="right-menu">
+      <div class="location-dropdown">
+        <button id="locationButton" class="location-icon" aria-label="Select Location">
+          <i class="fas fa-map-marker-alt"></i>
+        </button>
+      </div>
+
+      <div id="language-switcher">
+        <span id="lang-en" class="lang-btn active">ENG</span>
+        <span class="lang-separator">/</span>
+        <span id="lang-jp" class="lang-btn">JP</span>
+       
+      </div>
+
+      <a id="userBtn"><i class="fas fa-user"></i></a>
+    </div>
+  </nav>
+
+  <!-- ANA VIDEO -->
+  <section class="film-image" aria-label="Main film video">
+    <video autoplay muted loop playsinline>
+      <source src="../public/video/worker.mp4" type="video/mp4" />
+    </video>
+    <div class="main-text">
+      <h1 data-en="Film Your Car" data-jp="車をフィルムで保護" >Film Your Car</h1>
+      <p data-en="Protect your car with JTW" data-jp="JTWであなたの車を保護しましょう" >Protect your car with JTW</p>
+    </div>
+  </section>
+  <!-- ANA VIDEO ALTINA CAR WRAPPING TANITIMI -->
+  <section class="basic-intro">
+    <h2 class="basic-title" data-en="Basic Introduction" data-jp="基本紹介" >
+      Basic Introduction
+    </h2>
+    <p class="basic-paragraph" data-en="The most stylish way to personalize your vehicle is here! Our store offers high-quality car wrapping solutions, including color change films, invisible protective films, and custom anime-themed itasha wraps."
+       data-jp="車を個性的にする最もスタイリッシュな方法はこちら！当店では、カラーチェンジフィルム、透明保護フィルム、アニメテーマの痛車ラップを提供しています。"
+       >
+      The most stylish way to personalize your vehicle is here! Our store offers high-quality car wrapping solutions, including color change films, invisible protective films, and custom anime-themed itasha wraps.
+    </p>
+    <p class="basic-paragraph" data-en="We turn the design of your dreams into reality."
+       data-jp="あなたの夢のデザインを現実にします。"
+       >
+      We turn the design of your dreams into reality.
+    </p>
+  </section>
+  
+  
+  <!-- KATEGORİ SEÇİMİ -->
+  <section class="category-selector" aria-label="Select protection category">
+    <div class="category-title">
+      <h2 data-en="Wrap & Protection" data-jp="ラップ＆保護" >Wrap & Protection</h2>
+    </div>
+    <div class="category-buttons" role="tablist">
+      <button class="category-btn active" data-target="body-content" role="tab" aria-selected="true" aria-controls="body-content" id="tab-body" data-en="Body" data-jp="ボディ" >Body</button>
+      <button class="category-btn" data-target="windows-content" role="tab" aria-selected="false" aria-controls="windows-content" id="tab-windows" data-en="Windows" data-jp="ウィンドウ" >Windows</button>
+      <button class="category-btn" data-target="light-content" role="tab" aria-selected="false" aria-controls="light-content" id="tab-light" data-en="Light" data-jp="ライト" >Light</button>
+      <button class="category-btn" data-target="film-info-content" role="tab" aria-selected="false" aria-controls="film-info-content" id="tab-filminfo" data-en="Color" data-jp="カラー" >Color</button>
+    </div>
+  </section>
+
+  <!-- KATEGORİ İÇERİKLERİ -->
+  <div class="category-content-container">
+
+    <!-- BODY -->
+    <section class="category-content active" id="body-content" role="tabpanel" aria-labelledby="tab-body">
+      <div class="image-text-wrapper">
+        <div class="text-column">
+            <h2 data-en="BODY PROTECT" data-jp="ボディ保護" data-cn="车身保护">BODY PROTECT</h2>
+            <p><strong><i class="fas fa-shield-alt"></i> <span data-en="Invisible Protection:" data-jp="見えない保護：" >Invisible Protection:</span></strong> <span data-en="We use premium TPU material to keep your vehicle’s original paint safe for a long time." data-jp="高品質TPU素材を使用し、長期間車両の塗装を保護します。" >We use premium TPU material to keep your vehicle’s original paint safe for a long time.</span></p>
+            <p><strong><i class="fas fa-sync-alt"></i> <span data-en="Self-Healing Technology:" data-jp="自己修復技術：" >Self-Healing Technology:</span></strong> <span data-en="Minor scratches repair themselves with heat." data-jp="軽度の傷は熱で自然に修復されます。" >Minor scratches repair themselves with heat.</span></p>
+            <p><strong><i class="fas fa-feather-alt"></i> <span data-en="Resistant to External Factors:" data-jp="外部要因に強い：" >Resistant to External Factors:</span></strong> <span data-en="Durable against bird droppings, light scratches, and other elements." data-jp="鳥の糞や軽い擦り傷、その他の影響に強い耐久性があります。" >Durable against bird droppings, light scratches, and other elements.</span></p>
+            <p><strong><i class="fas fa-tint-slash"></i> <span data-en="Hydrophobic Surface:" data-jp="撥水表面：" >Hydrophobic Surface:</span></strong> <span data-en="Repels water and dirt for a cleaner finish." data-jp="水や汚れをはじき、よりきれいな仕上がりにします。" >Repels water and dirt for a cleaner finish.</span></p>
+            <p><strong><i class="fas fa-sparkles"></i> <span data-en="Glossy and Matte Options:" data-jp="光沢およびマットオプション：" >Glossy and Matte Options:</span></strong> <span data-en="Glossy film adds up to 30% extra shine, while matte offers a sleek, sophisticated look." data-jp="光沢フィルムは最大30％の輝きを追加し、マットは洗練された外観を提供します。" >Glossy film adds up to 30% extra shine, while matte offers a sleek, sophisticated look.</span></p>
+          </div>
+          
+        <div class="image-card">
+          <div class="media-container">
+            <img src="../public/image/ppfbody.jpeg" alt="Body Protection Image" />
+            <video autoplay muted loop playsinline preload="none">
+              <source src="../public/video/ppfvideo2.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WINDOWS -->
+    <section class="category-content" id="windows-content" role="tabpanel" aria-labelledby="tab-windows">
+      <div class="image-text-wrapper">
+        <div class="text-column">
+          <h2 data-en="Window Protection" data-jp="ウィンドウ保護" >Window Protection</h2>  
+            <p>
+              <strong><i class="fas fa-eye-slash"></i> <span data-en="Privacy & Style:" data-jp="プライバシー＆スタイル：" data-cn="隐私与风格：">Privacy & Style:</span></strong>
+              <span data-en="Dark tints offer a sleek look while protecting your privacy inside the car." data-jp="ダークティントはスタイリッシュな見た目を提供しつつ、車内のプライバシーを守ります。" >Dark tints offer a sleek look while protecting your privacy inside the car.</span>
+            </p>
+            <p>
+              <strong><i class="fas fa-sun"></i> <span data-en="UV & Heat Blocking:" data-jp="UV＆熱遮断：" data-cn="防紫外线与隔热：">UV & Heat Blocking:</span></strong>
+              <span data-en="Rejects harmful UV rays and reduces interior heat for a cooler ride." data-jp="有害な紫外線を遮断し、車内の熱を軽減して快適な乗車を提供します。" >Rejects harmful UV rays and reduces interior heat for a cooler ride.</span>
+            </p>
+            <p>
+              <strong><i class="fas fa-tint"></i> <span data-en="Glare Reduction:" data-jp="まぶしさ軽減：" data-cn="眩光减少：">Glare Reduction:</span></strong>
+              <span data-en="Improves visibility by cutting sun glare and headlight dazzle." data-jp="太陽のまぶしさやヘッドライトのギラつきをカットし、視界を改善します。" >Improves visibility by cutting sun glare and headlight dazzle.</span>
+            </p>
+            <p>
+              <strong><i class="fas fa-check-circle"></i> <span data-en="Legal Compliance:" data-jp="法令遵守：" >Legal Compliance:</span></strong>
+              <span data-en="Available in tint levels that comply with Japan's road safety laws." data-jp="日本の道路安全法に準拠したティントレベルを提供しています。" >Available in tint levels that comply with Japan's road safety laws.</span>
+            </p>
+          </div>  
+        <div class="image-card">
+          <div class="media-container">
+            <img src="../public/image/ppfwindow.jpeg" alt="Window Protection Image" />
+            <video autoplay muted loop playsinline preload="none">
+              <source src="../public/video/windowfilm.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHT -->
+    <section class="category-content" id="light-content" role="tabpanel" aria-labelledby="tab-light">
+      <div class="image-text-wrapper">
+        <div class="text-column">
+          <h2 data-en="Light Protection" data-jp="ライト保護" data-cn="灯光保护">Light Protection</h2>
+          <p><strong><i class="fas fa-lightbulb"></i> <span data-en="Clear Lens Guard:" data-jp="クリアレンズガード：" >Clear Lens Guard:</span></strong> <span data-en="Prevents yellowing and cracking of headlights and tail lamps." data-jp="ヘッドライトやテールランプの黄変やひび割れを防ぎます。" >Prevents yellowing and cracking of headlights and tail lamps.</span></p>
+          <p><strong><i class="fas fa-shield-virus"></i> <span data-en="Impact Resistance:" data-jp="耐衝撃性：" >Impact Resistance:</span></strong> <span data-en="Minimizes damage from gravel, insects, and weather elements." data-jp="砂利や虫、天候によるダメージを最小限に抑えます。" >Minimizes damage from gravel, insects, and weather elements.</span></p>
+          <p><strong><i class="fas fa-tint"></i> <span data-en="Stylish Tint Option:" data-jp="スタイリッシュなティントオプション：" >Stylish Tint Option:</span></strong> <span data-en="Optional smoke or black-out films for a sleek custom look." data-jp="スモークやブラックアウトフィルムのオプションがあります。" >Optional smoke or black-out films for a sleek custom look.</span></p>
+          <p><strong><i class="fas fa-tools"></i> <span data-en="Easy Maintenance:" data-jp="簡単なメンテナンス：" >Easy Maintenance:</span></strong> <span data-en="Film is easy to clean and maintain, keeping lights clear." data-jp="フィルムは掃除やメンテナンスが簡単で、ライトをクリアに保ちます。" >Film is easy to clean and maintain, keeping lights clear.</span></p>
+        </div>
+        <div class="image-card">
+          <div class="media-container">
+            <img src="../public/image/pplight.jpeg" alt="Light Protection Image" />
+            <video autoplay muted loop playsinline preload="none">
+              <source src="../public/video/ppflightpro.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- color  -->
+    <section class="category-content" id="film-info-content" role="tabpanel" aria-labelledby="tab-color wrap">
+      <div class="image-text-wrapper">
+        <div class="text-column">
+            <h2 data-en="Color Wrap Film" data-jp="カラーフィルムラップ" data-cn="颜色贴膜">Color Wrap Film</h2>
+            <p><strong><i class="fas fa-palette"></i> <span data-en="Choose Your Color, Create Your Style:" data-jp="色を選び、スタイルを作る：" >Choose Your Color, Create Your Style:</span></strong> <span data-en="We offer high-performance films like TPU, CPU, and PET from internationally recognized brands for your color change wraps." data-jp="国際的に認められたブランドのTPU、CPU、PETなど高性能フィルムを提供しています。">We offer high-performance films like TPU, CPU, and PET from internationally recognized brands for your color change wraps.</span></p>
+            <p><strong><i class="fas fa-check-circle"></i> <span data-en="TPU Material:" data-jp="TPU素材：" >TPU Material:</span></strong> <span data-en="Premium quality with lightweight self-healing properties to keep your vehicle looking brand new." data-jp="高品質で軽量、自己修復機能付きで車を新品のように保ちます。" >Premium quality with lightweight self-healing properties to keep your vehicle looking brand new.</span></p>
+            <p><strong><i class="fas fa-balance-scale"></i> <span data-en="CPU Material:" data-jp="CPU素材：" >CPU Material:</span></strong> <span data-en="Durable and budget-friendly, making it a favorite among our customers." data-jp="耐久性があり、コストパフォーマンスに優れているため人気があります。" >Durable and budget-friendly, making it a favorite among our customers.</span></p>
+            <p><strong><i class="fas fa-coins"></i> <span data-en="PET Material:" data-jp="PET素材：" >PET Material:</span></strong> <span data-en="Ideal for those seeking economical and basic protection." data-jp="経済的で基本的な保護を求める方に最適です。" >Ideal for those seeking economical and basic protection.</span></p>
+            <p><strong><i class="fas fa-user-cog"></i> <span data-en="Personalized Solutions:" data-jp="パーソナライズされたソリューション：" >Personalized Solutions:</span></strong> <span data-en="Choose your preferred brand and material freely; we provide custom-tailored wrap solutions just for you." data-jp="お好みのブランドと素材を自由に選択でき、あなたのためにカスタムメイドのラップソリューションを提供します。" >Choose your preferred brand and material freely; we provide custom-tailored wrap solutions just for you.</span></p>
+          </div>  
+        <div class="image-card">
+          <div class="media-container">
+            <img src="../public/image/film-pc.jpg" alt="XPEL Film" />
+            <video autoplay muted loop playsinline preload="none">
+              <source src="../public/video/craf.2.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="extra-section" aria-label="Custom Wrap / Itasha Wrap">
+      <div class="custom-image-text-wrapper">
+        
+        <!-- Custom Wrap-->
+        <div class="custom-text-column">
+          <h2 data-en="Custom Wrap" data-jp="カスタムラップ" >Custom Wrap</h2>
+          <p><strong data-en="Special Design Wrap / Itasha Wrap" data-jp="特別デザインラップ / 痛車ラップ" >Special Design Wrap / Itasha Wrap</strong></p>
+          <p data-en="Whether it's brand promotion, a custom design, or anime-themed itasha style, we offer end-to-end custom wrap services from concept to application."
+             data-jp="ブランドプロモーション、カスタムデザイン、アニメテーマの痛車スタイルなど、企画から施工まで一貫したカスタムラップサービスを提供しています。"
+           >
+            Whether it's brand promotion, a custom design, or anime-themed itasha style, we offer end-to-end custom wrap services from concept to application.
+          </p>
+          <p data-en="You can bring your own images or leave the design completely to us."
+             data-jp="ご自身の画像を持ち込むことも、完全にデザインをお任せいただくことも可能です。"
+            >
+            You can bring your own images or leave the design completely to us.
+          </p>
+          <p data-en="Every vehicle becomes a unique work of art that reflects your style!"
+             data-jp="すべての車があなたのスタイルを反映したユニークなアート作品になります！"
+           >
+            Every vehicle becomes a unique work of art that reflects your style!
+          </p>
+        </div>
+    
+        <!-- Sağ görsel/video alanı -->
+        <div class="custom-image-card">
+          <div class="custom-media-container hover-video" style="cursor: pointer;">
+            <img src="../public/image/jtwlogo.jpeg" alt="Custom Wrap Image" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="../public/video/modfy.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+  
+   <!-- Downplace link -->
+   <footer class="site-footer">
+    <div class="footer-wrapper">
+
+      <!-- SOLDAN: FILMS + SERVICES -->
+      <div class="footer-left-section">
+        <div class="footer-group">
+          <h4 data-en="SERVICES" data-jp="サービス" data-cn="服务">SERVICES</h4>
+          <a href="film-protect.html" data-en="Films" data-jp="フィルム" >Films</a>
+          <a href="car-wash.html" data-en="Car Wash" data-jp="洗車" >Car Wash</a>
+          <a href="repair.html" data-en="Repair" data-jp="修理" >Repair</a>
+          <a href="led.html" data-en="Modify" data-jp="もうでふぁい" >Modify</a>
+        </div>
+
+        <div class="footer-group">
+          <h4 data-en="NEW" data-jp="新着" >NEW</h4>
+          <a href="gallery.html" data-en="Gallery" data-jp="ライト" >Gallery</a>
+        </div>
+      </div>
+
+      <!-- ORTA LOGO -->
+      <div class="footer-center-section">
+        <div class="footer-logo">JTW</div>
+      </div>
+
+      <!-- SAĞDAN: COMPANY + SOCIAL -->
+      <div class="footer-right-section">
+        <div class="footer-group">
+          <h4 data-en="COMPANY" data-jp="会社" >COMPANY</h4>
+          <a href="contact.html" data-en="Contact" data-jp="お問い合わせ" >Contact</a>
+          <a href="about.html" data-en="About Us" data-jp="私たちについて" >About Us</a>
+        </div>
+
+        <div class="footer-group">
+          <h4 data-en="SOCIAL" data-jp="ソーシャル" >SOCIAL</h4>
+          <div class="social-icons vertical">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a>
+            <a href="https://www.x.com"><i class="fab fa-x-twitter" aria-hidden="true"></i> X</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.wechat.com"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-copy" data-en="© 2025 JTW. All rights reserved." data-jp="© 2025 JTW。無断転載禁止。">© 2025 JTW. All rights reserved.</div>
+  </footer>
+</body>
+</html>

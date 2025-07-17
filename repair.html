@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <title>JTW</title>
+
+  <!-- Kendi fontların -->
+  <link rel="stylesheet" href="../style/font.css" />
+  
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <link rel="stylesheet" href="../style/car-washvideo.css" />
+  <link rel="stylesheet" href="../style/repair-image.css" />
+  <link rel="stylesheet" href="../style/mainbutton.css" />
+  <link rel="stylesheet" href="../style/main-animation.css" />
+  <link rel="stylesheet" href="../style/downplace.css" />
+
+  <!-- JavaScript dosyaları defer ile -->
+  <script src="../scripts/cars-script.js" defer></script>
+  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/language.js" defer></script>
+  <script src="../scripts/location.js" defer></script>
+  <script src="../scripts/switch.js" defer></script>
+  <script src="../scripts/repari.js" defer></script>
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="main.html" id="center-logo">JTW</a>
+    <div class="main-nav">
+      <a href="main.html" data-en="Home" data-jp="ホーム">Home</a>
+      <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+      <a href="gallery.html" data-en="Gallery" data-jp="ライト">Gallery</a>
+      <a href="led.html" data-en="Modify" data-jp="もうでふぁい">Modify</a>
+      <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+      <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+      <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+      <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+    </div>
+
+    <div class="right-menu">
+      <a id="locationButton" class="location-icon" role="button" aria-label="本店の位置を開く" href="#">
+        <i class="fas fa-map-marker-alt"></i>
+      </a>
+
+      <!-- Dil seçici -->
+      <div id="language-switcher">
+        <span id="lang-en" class="lang-btn active">ENG</span>
+        <span class="lang-separator">/</span>
+        <span id="lang-jp" class="lang-btn">JP</span>
+      </div>
+
+      <!-- User icon -->
+      <a id="userBtn" href="#" aria-label="User menu"><i class="fas fa-user"></i></a>
+    </div>
+  </nav>
+
+  <!-- ANA VIDEO -->
+  <section class="wash-image" aria-label="Main car wash video">
+    <video autoplay muted loop playsinline>
+      <source src="../public/video/carwash.11.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="main-text">
+      <h1 data-en="Clean Your Car" data-jp="車を清潔に">Clean Your Car</h1>
+      <p data-en="Like a New Car JTW" data-jp="新車のように、JTW">Like a New Car JTW</p>
+    </div>
+  </section>
+  <!--image info-->
+  <section class="repair-highlight" aria-label="Repair Information Section">
+    <div class="repair-bg">
+      <img src="../public/image/carlogo.jpeg" alt="Repair background" />
+      <div class="repair-overlay">
+        <h2 class="animate-title">Fast and Reliable</h2>
+        <ul class="animate-points">
+          <ul class="animate-points">
+            <li><i class="fas fa-tools"></i> Engine Diagnostics</li>
+            <li><i class="fas fa-car-crash"></i> Brake Systems</li>
+            <li><i class="fas fa-cogs"></i> Transmission Repair</li>
+            <li><i class="fas fa-bolt"></i> Electrical Faults</li>
+          </ul>
+        </ul>
+        <p class="animate-description">
+          Leave your vehicle in good hands with our advanced equipment and experienced technicians.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+<!--image card-->
+<section class="advantage-section" id="advantage-block">
+  <!-- Sol Resim -->
+  <div class="advantage-image">
+    <img src="../public/image/light.jpeg" alt="Repair Team">
+  </div>
+
+  <!-- Sağ Yazılar -->
+  <div class="advantage-text">
+    <h2 class="advantage-title">Our Advantages</h2>
+    <ul class="advantage-list">
+      <li><i class="fas fa-search"></i> Fast and accurate diagnostics</li>
+      <li><i class="fas fa-cogs"></i> Use of original or high-quality parts</li>
+      <li><i class="fas fa-hand-holding-usd"></i> Transparent pricing, no hidden fees</li>
+      <li><i class="fas fa-tools"></i> Post-repair maintenance and advice</li>
+    </ul>
+  </div>
+</section>
+   <!-- Downplace link -->
+   <footer class="site-footer">
+    <div class="footer-wrapper">
+
+      <!-- SOLDAN: FILMS + SERVICES -->
+      <div class="footer-left-section">
+        <div class="footer-group">
+          <h4>SERVICES</h4>
+          <a href="film-protect.html">Films</a>
+          <a href="car-wash.html">Car Wash</a>
+          <a href="repair.html">Repair</a>
+          <a href="led.html">Modify</a>
+        </div>
+
+        <div class="footer-group">
+          <h4>NEW</h4>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <!-- ORTA LOGO -->
+      <div class="footer-center-section">
+        <div class="footer-logo">JTW</div>
+      </div>
+
+      <!-- SAĞDAN: COMPANY + SOCIAL -->
+      <div class="footer-right-section">
+        <div class="footer-group">
+          <h4>COMPANY</h4>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-group">
+          <h4>SOCIAL</h4>
+          <div class="social-icons vertical">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a>
+            <a href="https://www.x.com"><i class="fab fa-x-twitter" aria-hidden="true"></i> X</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.wechat.com"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-copy">&copy; 2025 JTW. All rights reserved.</div>
+  </footer>
+</body>
+</html>

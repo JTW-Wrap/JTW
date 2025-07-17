@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-en="Contact - JTW" data-jp="お問い合わせ - JTW">Contact - JTW</title>
+
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Kendi fontların burada, Google Fonts Kaldırıldı -->
+  <link rel="stylesheet" href="../style/font.css" />
+
+  <!-- JS dosyaları defer ile -->
+  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/language.js" defer></script>
+  <script src="../scripts/location.js" defer></script>
+  <script src="../scripts/switch.js" defer></script>
+
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="../style/mainbutton.css" />
+  <link rel="stylesheet" href="../style/main.css" />
+  <link rel="stylesheet" href="../style/contact.css" />
+  <link rel="stylesheet" href="../style/main-animation.css" />
+  <link rel="stylesheet" href="../style/downplace.css" />
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="main.html" id="center-logo">JTW</a>
+
+  <div class="main-nav">
+    <a href="main.html" data-en="Home" data-jp="ホーム">Home</a>
+    <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+    <a href="gallery.html" data-en="Gallery" data-jp="ライト">Gallery</a>
+    <a href="led.html" data-en="Modify" data-jp="もうでふぁい">Modify</a>
+    <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+    <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+    <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+    <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+  </div>
+
+  <div class="right-menu">
+    <div class="location-dropdown">
+      <button id="locationButton" class="location-icon" aria-label="Konum Seç">
+        <i class="fas fa-map-marker-alt"></i>
+      </button>
+    </div>
+
+    <div id="language-switcher">
+      <span id="lang-en" class="lang-btn active">ENG</span>
+      <span class="lang-separator">/</span>
+      <span id="lang-jp" class="lang-btn">JP</span>
+    </div>
+
+    <a id="userBtn" href="#" aria-label="User menu" data-en="User menu" data-jp="ユーザーメニュー"><i class="fas fa-user"></i></a>
+  </div>
+</nav>
+
+  <!-- Contact Section -->
+  <main class="contact-container" role="main" aria-label="Contact form and information">
+    <h1 class="section-title" data-en="Contact Us" data-jp="お問い合わせ">Contact Us</h1>
+
+    <div class="contact-content">
+      <!-- İletişim formu -->
+      <form class="contact-form" action="send-message.php" method="POST" aria-label="Contact form">
+        <label for="name" data-en="Name" data-jp="名前">Name<span aria-hidden="true">*</span></label>
+        <input 
+          type="text" id="name" name="name" 
+          placeholder="Your full name" 
+          data-en-placeholder="Your full name" 
+          data-jp-placeholder="フルネームを入力してください" 
+          required 
+        />
+      
+        <label for="email" data-en="Email" data-jp="メール">Email<span aria-hidden="true">*</span></label>
+        <input 
+          type="email" id="email" name="email" 
+          placeholder="your.email@example.com" 
+          data-en-placeholder="your.email@example.com" 
+          data-jp-placeholder="メールアドレスを入力してください" 
+          required 
+        />
+      
+        <label for="subject" data-en="Subject" data-jp="件名">Subject</label>
+        <input 
+          type="text" id="subject" name="subject" 
+          placeholder="Subject" 
+          data-en-placeholder="Subject" 
+          data-jp-placeholder="件名" 
+        />
+      
+        <label for="message" data-en="Message" data-jp="メッセージ">Message<span aria-hidden="true">*</span></label>
+        <textarea 
+          id="message" name="message" rows="6" 
+          placeholder="Write your message here..." 
+          data-en-placeholder="Write your message here..." 
+          data-jp-placeholder="ここにメッセージを入力してください..." 
+          required
+        ></textarea>
+      
+        <button type="submit" class="btn-primary" data-en="Send Message" data-jp="送信">Send Message</button>
+      </form>
+      
+
+      <!-- İletişim bilgileri -->
+      <aside class="contact-info" aria-label="Contact information">
+        <h2 data-en="Our Office" data-jp="オフィス">Our Office</h2>
+        
+        <p><i class="fas fa-map-marker-alt"></i> 
+          <span data-en="3-6-12 Honhasu, Kawaguchi City, Saitama 334-0076, Japan" data-jp="埼玉県川口市本蓮3-6-12 334-0076"></span>
+        </p>
+        
+        <p><i class="fas fa-train"></i> 
+          <span data-en="Nearest Station:" data-jp="最寄り駅:"></span> 
+          <span data-en="Kawaguchi Station → 20 min by bus → Main Store → 15 min walk → Soka Station" 
+                data-jp="川口駅 → バス20分 → 本店 → 徒歩15分 → 草加駅"></span>
+        </p>
+        
+        <p><i class="fas fa-car"></i> 
+          <span data-en="By Car:" data-jp="車で:"></span> 
+          <span data-en="Exit Shuto Expressway Kawaguchi Line at Shinkyō IC, immediate right-rear turn" 
+                data-jp="首都高速川口線新郷IC出口すぐ右後方折り返し"></span>
+        </p>
+        
+        <p><i class="fas fa-phone"></i> TEL: <a href="tel:048-229-1816">048-229-1816</a></p>
+        <p><i class="fas fa-fax"></i> FAX: 048-229-1218</p>
+        <p><i class="fas fa-envelope"></i> contact@jtwcars.com</p>
+      
+        <h2 data-en="Working Hours" data-jp="営業時間">Working Hours</h2>
+        
+        <p data-en="Mon - Fri: 9:00 AM - 6:00 PM" data-jp="月曜〜金曜: 9:00〜18:00">Mon - Fri: 9:00 AM - 6:00 PM</p>
+        <p data-en="Sat: 10:00 AM - 3:00 PM" data-jp="土曜: 10:00〜15:00">Sat: 10:00 AM - 3:00 PM</p>
+        <p data-en="Sun: Closed" data-jp="日曜: 休み">Sun: Closed</p>
+      </aside>
+      
+      </aside>
+    </div>
+  </main>
+ <!-- Downplace link -->
+ <footer class="site-footer">
+  <div class="footer-wrapper">
+
+    <!-- SOLDAN: FILMS + SERVICES -->
+    <div class="footer-left-section">
+      <div class="footer-group">
+        <h4 data-en="SERVICES" data-jp="サービス">SERVICES</h4>
+        <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+        <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+        <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+        <a href="led.html" data-en="Modify" data-jp="もうでふぁい">Modify</a>
+      </div>
+
+      <div class="footer-group">
+        <h4 data-en="NEW" data-jp="新着">NEW</h4>
+        <a href="gallery.html" data-en="Gallery" data-jp="ライト">Gallery</a>
+      </div>
+    </div>
+
+    <!-- ORTA LOGO -->
+    <div class="footer-center-section">
+      <div class="footer-logo">JTW</div>
+    </div>
+
+    <!-- SAĞDAN: COMPANY + SOCIAL -->
+    <div class="footer-right-section">
+      <div class="footer-group">
+        <h4 data-en="COMPANY" data-jp="会社">COMPANY</h4>
+        <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+        <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+      </div>
+
+      <div class="footer-group">
+        <h4 data-en="SOCIAL" data-jp="ソーシャル">SOCIAL</h4>
+        <div class="social-icons vertical">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a>
+          <a href="https://www.x.com"><i class="fab fa-x-twitter" aria-hidden="true"></i> X</a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+          <a href="https://www.wechat.com"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-copy" data-en="© 2025 JTW. All rights reserved." data-jp="© 2025 JTW. 無断転載禁止。">
+    &copy; 2025 JTW. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>

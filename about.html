@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JTW</title>
+  
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Kendi fontların burada, Google Fonts kaldırıldı -->
+  <link rel="stylesheet" href="../style/font.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <link rel="stylesheet" href="../style/film-video.css" />
+  <link rel="stylesheet" href="../style/about.css" />
+  <link rel="stylesheet" href="../style/mainbutton.css" />
+  <link rel="stylesheet" href="../style/menu.css" />
+  <link rel="stylesheet" href="../style/main-animation.css" />
+  <link rel="stylesheet" href="../style/downplace.css" />
+
+  <!-- JS -->
+  <script src="../scripts/scroll.js" defer></script>
+  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/language.js" defer></script>
+  <script src="../scripts/location.js" defer></script>
+  <script src="../scripts/about.js" defer></script>
+  <script src="../scripts/switch.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="main.html" id="center-logo">JTW</a>
+    <div class="main-nav">
+      <a href="main.html" data-en="Home" data-jp="ホーム">Home</a>
+      <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+      <a href="gallery.html" data-en="Gallery" data-jp="ギャラリー">Gallery</a>
+      <a href="led.html" data-en="Modify" data-jp="モディファイ">Modify</a>
+      <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+      <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+      <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+      <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+    </div>
+    
+    <div class="right-menu">
+      <div class="location-dropdown">
+        <button id="locationButton" class="location-icon" aria-label="Select Location">
+          <i class="fas fa-map-marker-alt"></i>
+        </button>
+      </div>
+
+      <!-- Dil seçici -->
+      <div id="language-switcher">
+        <span id="lang-en" class="lang-btn active">ENG</span>
+        <span class="lang-separator">/</span>
+        <span id="lang-jp" class="lang-btn">JP</span>
+      </div>
+
+      <!-- User icon -->
+      <a id="userBtn" href="#" aria-label="User menu"><i class="fas fa-user"></i></a>
+    </div>
+  </nav>
+
+  <!-- Video Section -->
+  <div class="section active">
+    <video class="bg-video" autoplay muted loop>
+      <source src="../public/video/car-washprof.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+      <h1 data-en="Welcome to the Future" data-jp="未来へようこそ">Welcome to the Future</h1>
+      <p data-en="This is your cinematic scroll website" data-jp="これはあなたのシネマティックスクロールウェブサイトです">This is your cinematic scroll website</p>
+    </div>
+  </div>
+
+  <div class="after-video-spacing"></div>
+
+  <!-- Content -->
+  <section class="section">
+    <div class="image-text left-image">
+      <img src="../public/image/nkoda.png" alt="JTW Logo" />
+      <div class="content-text">
+        <h2 data-en="JTW" data-jp="JTW">JTW</h2>
+        <p data-en="Content 1 description" data-jp="コンテンツ1の説明">İçerik 1 açıklaması</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2 data-en="Owner" data-jp="オーナー">Owner</h2>
+    </div>
+    <div class="section">
+      <div class="image-text right-image">
+        <img src="../public/image/owner.webp" alt="Owner Ko Lee" />
+        <div class="content-text">
+          <h2 data-en="Ko Lee" data-jp="コ・リー">Ko Lee</h2>
+          <p data-en="Content 2 description" data-jp="コンテンツ2の説明">İçerik 2 açıklaması</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <div class="footer-left-section">
+        <div class="footer-group">
+          <h4 data-en="SERVICES" data-jp="サービス">SERVICES</h4>
+          <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+          <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+          <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+          <a href="led.html" data-en="Modify" data-jp="モディファイ">Modify</a>
+        </div>
+        <div class="footer-group">
+          <h4 data-en="NEW" data-jp="新着">NEW</h4>
+          <a href="gallery.html" data-en="Gallery" data-jp="ギャラリー">Gallery</a>
+        </div>
+      </div>
+
+      <div class="footer-center-section">
+        <div class="footer-logo">JTW</div>
+      </div>
+
+      <div class="footer-right-section">
+        <div class="footer-group">
+          <h4 data-en="COMPANY" data-jp="会社">COMPANY</h4>
+          <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+          <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+        </div>
+        <div class="footer-group">
+          <h4 data-en="SOCIAL" data-jp="ソーシャル">SOCIAL</h4>
+          <div class="social-icons vertical">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.x.com"><i class="fab fa-x-twitter"></i> X</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.wechat.com"><i class="fab fa-weixin"></i> WeChat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2025 JTW. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
