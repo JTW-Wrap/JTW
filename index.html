@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JTW</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Kendi fontların burada, Google Fonts Kaldırıldı -->
+  <link rel="stylesheet" href="../style/font.css" />
+
+  <!-- JavaScript dosyaları defer ile yüklenir -->
+  <script src="../scripts/main-video.js" defer></script>
+  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/language.js" defer></script>
+  <script src="../scripts/location.js" defer></script>
+  <script src="../scripts/switch.js" defer></script>
+
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <link rel="stylesheet" href="../style/mainvideo.css" />
+  <link rel="stylesheet" href="../style/mainimage.css" />
+  <link rel="stylesheet" href="../style/mainbutton.css" />
+  <link rel="stylesheet" href="../style/main-animation.css" />
+  <link rel="stylesheet" href="../style/downplace.css" />
+  <link rel="stylesheet" href="../style/information.css" />
+  <link rel="stylesheet" href="../style/main-image-last.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="main.html" id="center-logo" aria-label="Go to homepage">JTW</a>
+
+    <div class="main-nav">
+      <a href="main.html" data-en="Home" data-jp="ホーム">Home</a>
+      <a href="film-protect.html" data-en="Films" data-jp="フィルム">Films</a>
+      <a href="gallery.html" data-en="Gallery" data-jp="ギャラリー">Gallery</a>
+      <a href="led.html" data-en="Modify" data-jp="モディファイ">Modify</a>
+      <a href="repair.html" data-en="Repair" data-jp="修理">Repair</a>
+      <a href="car-wash.html" data-en="Car Wash" data-jp="洗車">Car Wash</a>
+      <a href="about.html" data-en="About Us" data-jp="私たちについて">About Us</a>
+      <a href="contact.html" data-en="Contact" data-jp="お問い合わせ">Contact</a>
+    </div>
+
+    <div class="right-menu">
+      <div class="location-dropdown">
+        <button id="locationButton" class="location-icon" aria-label="Select Location">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        </button>
+        <!-- Liste JS tarafından eklenecek -->
+      </div>
+
+     <!-- Dil seçici -->
+     <div id="language-switcher">
+      <span id="lang-en" class="lang-btn active">ENG</span>
+      <span class="lang-separator">/</span>
+      <span id="lang-jp" class="lang-btn">JP</span>
+    </div>
+    
+      <!-- User icon -->
+      <a id="userBtn" href="#" aria-label="User menu"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+  </nav>
+
+  <!-- Ana video alanı -->
+  <!-- Video Section Compatible with Full Page Layout -->
+<section class="main-image" aria-label="Main video background">
+  <a id="video-link" href="#" target="_blank" aria-label="Go to video page" tabindex="0">
+    <video id="main-video" autoplay muted playsinline></video>
+  </a>
+
+  <div id="video-indicators" class="video-indicators"></div>
+</section>
+
+<!-- Hidden video data section -->
+<div id="video-data" >
+  <!-- 1st Video -->
+  <div class="video-item" data-src="../public/video/ppfbody.mp4" data-link="film-protect.html">
+    <div class="details-container" style="background: transparent;">
+      <div class="details-left" style="background: transparent;">
+        <strong data-en="Free repairs for first 6 months" data-jp="最初の6ヶ月間無料修理">Free repairs for first 6 months</strong>
+        <p class="small-text" data-en="For minor peeling and light wear" data-jp="軽度の剥がれや軽い摩耗に対応">For minor peeling and light wear</p>
+      </div>
+      <div class="details-center">
+        <h1 data-en="Film Your Car" data-jp="車のフィルム">Film Your Car</h1>
+      </div>
+      <div class="details-right" style="background: transparent;">
+        <strong data-en="5-10 year warranty" data-jp="5～10年保証">5-10 year warranty</strong>
+        <p data-en="Warranty depends on materials used" data-jp="保証期間は使用材料によって異なります">Warranty depends on materials used</p>
+        <p data-en="Additional coating application" data-jp="追加のコーティング施工">Additional coating application</p>
+        <p data-en="Free repairs included" data-jp="無料修理が含まれています">Free repairs included</p>
+      </div>
+      <div class="details-bottom">
+        <button class="click-more" onclick="window.location.href='film-protect.html'" 
+          data-en="Click More" data-jp="詳しく見る">Click More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2nd Video -->
+  <div class="video-item" data-src="../public/video/pastacila2.mp4" data-link="led.html">
+    <div class="details-container" style="background: transparent;">
+      <div class="details-left" style="background: transparent;">
+        <strong data-en="Custom Lights & LEDs" data-jp="カスタムライト＆LED">Custom Lights & LEDs</strong>
+        <p class="small-text" data-en="Unique styles to make your car shine" data-jp="車を輝かせるユニークなスタイル">Unique styles to make your car shine</p>
+      </div>
+      <div class="details-center">
+        <h1 data-en="Modifya" data-jp="モディファイ">Modifya</h1>
+      </div>
+      <div class="details-right" style="background: transparent;">
+        <strong data-en="One-of-a-kind design" data-jp="唯一無二のデザイン">One-of-a-kind design</strong>
+        <p data-en="From subtle tweaks to bold upgrades" data-jp="細かな調整から大胆なアップグレードまで">From subtle tweaks to bold upgrades</p>
+        <p data-en="Personalized lighting solutions" data-jp="パーソナライズされた照明ソリューション">Personalized lighting solutions</p>
+        <p data-en="Professional installation included" data-jp="専門的な取り付け込み">Professional installation included</p>
+      </div>
+      <div class="details-bottom">
+        <button class="click-more" onclick="window.location.href='led.html'" 
+          data-en="Click More" data-jp="詳しく見る">Click More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3rd Video -->
+  <div class="video-item" data-src="../public/video/worker.mp4" data-link="car-wash.html">
+    <div class="details-container" style="background: transparent;">
+      <div class="details-left" style="background: transparent;">
+        <strong data-en="Steam Cleaning" data-jp="スチームクリーニング">Steam Cleaning</strong>
+        <p class="small-text" data-en="Protect your car with touchless cleaning" data-jp="非接触洗浄で車を保護">Protect your car with touchless cleaning</p>
+      </div>
+      <div class="details-center">
+        <h1 data-en="Car Wash" data-jp="洗車">Car Wash</h1>
+      </div>
+      <div class="details-right" style="background: transparent;">
+        <strong data-en="Deep Shine & Gloss" data-jp="深い光沢と輝き">Deep Shine & Gloss</strong>
+        <p data-en="Interior and exterior care" data-jp="内装と外装のケア">Interior and exterior care</p>
+        <p data-en="Long-lasting coatings" data-jp="長持ちするコーティング">Long-lasting coatings</p>
+        <p data-en="Eco-friendly methods" data-jp="環境に優しい方法">Eco-friendly methods</p>
+      </div>
+      <div class="details-bottom">
+        <button class="click-more" onclick="window.location.href='car-wash.html'" 
+          data-en="Click More" data-jp="詳しく見る">Click More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4th Video -->
+  <div class="video-item" data-src="../public/video/ppfbody12.mp4" data-link="repair.html">
+    <div class="details-container" style="background: transparent;">
+      <div class="details-left" style="background: transparent;">
+        <strong data-en="Precision Repairs" data-jp="精密修理">Precision Repairs</strong>
+        <p class="small-text" data-en="From dents to deep scratches" data-jp="へこみから深い傷まで">From dents to deep scratches</p>
+      </div>
+      <div class="details-center">
+        <h1 data-en="Repair Service" data-jp="修理サービス">Repair Service</h1>
+      </div>
+      <div class="details-right" style="background: transparent;">
+        <strong data-en="Trusted Methods" data-jp="信頼の手法">Trusted Methods</strong>
+        <p data-en="High-quality parts used" data-jp="高品質な部品使用">High-quality parts used</p>
+        <p data-en="Transparent pricing" data-jp="明確な料金設定">Transparent pricing</p>
+        <p data-en="Guaranteed satisfaction" data-jp="満足保証">Guaranteed satisfaction</p>
+      </div>
+      <div class="details-bottom">
+        <button class="click-more" onclick="window.location.href='repair.html'" 
+          data-en="Click More" data-jp="詳しく見る">Click More</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <!-- Video göstergeleri, JS ile doldurulacak -->
+  <div id="video-indicators" class="video-indicators" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Büyük resim alanı + hover video -->
+  <section class="fullscreen-image-section">
+    <a href="film-protect.html" class="clickable-area" tabindex="0" aria-label="Go to Cars page">
+      <div class="media-container">
+        <img src="../public/image/carlogo.jpeg" alt="Background Image" />
+        <video class="hover-video" muted autoplay loop playsinline>
+          <source src="../public/video/mainpage.4.mov" type="video/mp4" />
+        </video>
+
+        <h1 class="main-title" data-en="JTW FILMS" data-jp="JTWフィルム">JTW FILMS</h1>
+        <h2 class="main-subtitle" data-en="FOUND YOUR WAY AND PROTECT YOUR CAR" data-jp="あなたの道を見つけて車を守る">
+          FOUND YOUR WAY<br />AND PROTECT YOUR CAR
+        </h2>
+        <p class="information" data-en="Click for more" data-jp="詳しく見る">Click for more</p>
+      </div>
+    </a>
+  </section>
+
+ <!-- Information başlığı -->
+<h2 class="section-title scroll-animate" data-en="Information" data-jp="情報">Information</h2>
+
+<!-- İkinci ana görsel ve yazı alanı -->
+<section class="main-second-image-section">
+  <div class="image-text-wrapper">
+
+    <!-- Sol metin sütunu -->
+    <div class="text-column scroll-animate">
+      <p>
+        <strong class="lang-text" 
+                data-en="We are JTW." 
+                data-jp="私たちはJTWです。">
+          We are JTW.
+        </strong>
+        <span class="lang-text" 
+              data-en=" A premium car wrap and customization center founded by the Chinese community in Japan." 
+              data-jp=" 日本に住む中国人コミュニティによって設立された、プレミアムカーラッピングおよびカスタマイズ専門店です。">
+          A premium car wrap and customization center founded by the Chinese community in Japan.
+        </span>
+      </p>
+      <p class="lang-text"
+         data-en="From car wrapping to customization, washing to repairs, we provide professional, attentive, and cost-effective services for every car owner."
+         data-jp="カーラッピングからカスタム、洗車、修理まで、あらゆるカーライフに寄り添い、丁寧でプロフェッショナル、かつコストパフォーマンスに優れたサービスを提供しています。">
+        From car wrapping to customization, washing to repairs, we provide professional, attentive, and cost-effective services for every car owner.
+      </p>
+      <p class="lang-text"
+         data-en="We believe a car’s true personality lies not only in its speed, but also in the details and the attitude it expresses."
+         data-jp="私たちは、車の真の個性はスピードだけでなく、その細部や醸し出す雰囲気に表れると信じています。">
+        We believe a car’s true personality lies not only in its speed, but also in the details and the attitude it expresses.
+      </p>
+      <p>
+        <strong class="lang-text" 
+                data-en="【Car Wrapping】" 
+                data-jp="【カーラッピング】">
+          【Car Wrapping】
+        </strong><br>
+        <span class="lang-text" 
+              data-en="We offer TPU and PVC films in gloss, matte, graphic, and full-body color change finishes. High-quality imported films and precision computer cutting ensure a flawless result and durability (5–10 year warranty)." 
+              data-jp="グロス、マット、グラフィック、フルボディカラーチェンジなど、さまざまな仕上げのTPU・PVCフィルムをご用意。高品質な輸入フィルムとコンピューターによる高精度カットで、美しい仕上がりと5〜10年の耐久性を実現します。">
+          We offer TPU and PVC films in gloss, matte, graphic, and full-body color change finishes...
+        </span>
+      </p>
+      <p>
+        <strong class="lang-text" 
+                data-en="【Custom Modifications】" 
+                data-jp="【カスタム改造】">
+          【Custom Modifications】
+        </strong><br>
+        <span class="lang-text" 
+              data-en="Carbon-style stickers, body kits, upgraded wheels, and lighting systems — one-stop customization to make your car stand out." 
+              data-jp="カーボン調ステッカー、エアロパーツ、ホイールアップグレード、ライティングシステムなど、あなたの車を唯一無二にするワンストップカスタマイズをご提供します。">
+          Carbon-style stickers, body kits, upgraded wheels, and lighting systems...
+        </span>
+      </p>
+      <p>
+        <strong class="lang-text" 
+                data-en="【Vehicle Repair】" 
+                data-jp="【車両修理】">
+          【Vehicle Repair】
+        </strong><br>
+        <span class="lang-text" 
+              data-en="From small dents to major bodywork, we provide clear pricing, skilled execution, and quick turnaround for peace of mind." 
+              data-jp="小さなヘコミから大きなボディ修理まで、明瞭な価格設定、プロの技術、迅速な対応で安心のサービスをお届けします。">
+          From small dents to major bodywork, we provide clear pricing...
+        </span>
+      </p>
+      <p>
+        <strong class="lang-text" 
+                data-en="【Professional Car Wash & Detailing】" 
+                data-jp="【プロフェッショナル洗車 & ディテイリング】">
+          【Professional Car Wash & Detailing】
+        </strong><br>
+        <span class="lang-text" 
+              data-en="Touchless high-pressure steam washing, interior deep cleaning, and protective coatings keep your car shining and protected." 
+              data-jp="非接触高圧スチーム洗浄、車内クリーニング、保護コーティングなど、車の輝きと美しさを維持・回復するための本格的なケアを行います。">
+          Touchless high-pressure steam washing, interior deep cleaning...
+        </span>
+      </p>
+    </div>
+    
+    <!-- Sağda resim + hover ile değişen ikinci resim -->
+    <div class="information-card scroll-animate">
+      <div class="media-container">
+        <img src="../public/image/nkoda.png" alt="Featured Car" class="main-image" />
+        <img src="../public/image/jtwlogo.jpeg" alt="Hover Car" class="hover-image" />
+      </div>
+    </div>
+    
+</section>
+
+  <!-- More Service başlığı -->
+  <h2 class="section-title" data-en="More Service" data-jp="さらにサービス" data-cn="更多服务">More Service</h2>
+
+  <!-- Aşağıdaki 4 resim + video kartları -->
+  <section class="image-row">
+    <div class="image-card">
+      <a href="Led.html" class="clickable-area" tabindex="0" aria-label="Go to Led Custom page">
+        <div class="media-container">
+          <img src="../public/image/modfy2.jpeg" alt="Example 1" />
+          <video class="hover-video" muted autoplay loop playsinline>
+            <source src="../public/video/modfy.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="text-overlay">
+          <h3 data-en="Modify" data-jp="モディファイ" data-cn="改装">Modify</h3>
+          <p class="information" data-en="Click for more" data-jp="詳しく見る" data-cn="查看更多">Click for more</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="image-card">
+      <a href="gallery.html" class="clickable-area" tabindex="0" aria-label="Go to Gallery page">
+        <div class="media-container">
+          <img src="../public/image/film-sp.jpg" alt="Example 2" />
+          <video class="hover-video" muted autoplay loop playsinline>
+            <source src="../public/video/ppfbody.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="text-overlay">
+          <h3 data-en="Gallery" data-jp="ギャラリー" data-cn="画廊">Gallery</h3>
+          <p class="information" data-en="Click for more" data-jp="詳しく見る" data-cn="查看更多">Click for more</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="image-row">
+    <div class="image-card">
+      <a href="car-wash.html" class="clickable-area" tabindex="0" aria-label="Go to Car Wash page">
+        <div class="media-container">
+          <img src="../public/image/film-pc.jpg" alt="Example 3" />
+          <video class="hover-video" muted autoplay loop playsinline>
+            <source src="../public/video/carwashblack2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="text-overlay">
+          <h3 data-en="Car Wash" data-jp="洗車" data-cn="洗车">Car Wash</h3>
+          <p class="information" data-en="Click for more" data-jp="詳しく見る" data-cn="查看更多">Click for more</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="image-card">
+      <a href="repair.html" class="clickable-area" tabindex="0" aria-label="Go to Repair page">
+        <div class="media-container">
+          <img src="../public/image/ppfwindow.jpeg" alt="Example 4" />
+          <video class="hover-video" muted autoplay loop playsinline>
+            <source src="../public/video/repairvideo.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="text-overlay">
+          <h3 data-en="Repair" data-jp="修理" data-cn="维修">Repair</h3>
+          <p class="information" data-en="Click for more" data-jp="詳しく見る" data-cn="查看更多">Click for more</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+
+   <!-- Downplace link -->
+   <footer class="site-footer">
+    <div class="footer-wrapper">
+
+      <!-- SOLDAN: FILMS + SERVICES -->
+      <div class="footer-left-section">
+        <div class="footer-group">
+          <h4 data-en="SERVICES" data-jp="サービス" data-cn="服务">SERVICES</h4>
+          <a href="film-protect.html" data-en="Films" data-jp="フィルム" data-cn="保护膜">Films</a>
+          <a href="car-wash.html" data-en="Car Wash" data-jp="洗車" data-cn="洗车">Car Wash</a>
+          <a href="repair.html" data-en="Repair" data-jp="修理" data-cn="维修">Repair</a>
+          <a href="led.html" data-en="Modify" data-jp="モディファイ" data-cn="改装">Modify</a>
+        </div>
+
+        <div class="footer-group">
+          <h4 data-en="NEW" data-jp="新着" data-cn="最新">NEW</h4>
+          <a href="gallery.html" data-en="Gallery" data-jp="ギャラリー" data-cn="画廊">Gallery</a>
+        </div>
+      </div>
+
+      <!-- ORTA LOGO -->
+      <div class="footer-center-section">
+        <div class="footer-logo">JTW</div>
+      </div>
+
+      <!-- SAĞDAN: COMPANY + SOCIAL -->
+      <div class="footer-right-section">
+        <div class="footer-group">
+          <h4 data-en="COMPANY" data-jp="会社" data-cn="公司">COMPANY</h4>
+          <a href="contact.html" data-en="Contact" data-jp="お問い合わせ" data-cn="联系我们">Contact</a>
+          <a href="about.html" data-en="About Us" data-jp="私たちについて" data-cn="关于我们">About Us</a>
+        </div>
+
+        <div class="footer-group">
+          <h4 data-en="SOCIAL" data-jp="ソーシャル" data-cn="社交">SOCIAL</h4>
+          <div class="social-icons vertical">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a>
+            <a href="https://www.x.com"><i class="fab fa-x-twitter" aria-hidden="true"></i> X</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.wechat.com"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-copy">&copy; 2025 JTW. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
