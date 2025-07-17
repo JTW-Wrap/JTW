@@ -1,0 +1,317 @@
+:root {
+  --red: #ff0015;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
+  background: #121212;
+  color: white;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Her video içeriği için */
+.video-item {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-item.active {
+  display: block;
+  z-index: 5;
+}
+
+/* Ana video kapsayıcısı */
+.main-image {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: none;
+  z-index: 0;
+}
+
+.main-image video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: transparent;
+  z-index: 1;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Detay içerik */
+.details-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  pointer-events: none;
+  gap: 30px;
+  flex-wrap: nowrap;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+
+/* İçerik tıklanabilir */
+.details-left,
+.details-center,
+.details-right,
+.details-bottom {
+  pointer-events: auto;
+}
+
+/* SOL BLOK */
+.details-left {
+  flex: 0 0 280px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: left;
+  font-size: 2.5rem;
+  color: var(--red);
+  text-transform: none;
+}
+
+.details-left strong {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--red);
+}
+
+.details-left p {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ORTA BLOK */
+.details-center {
+  flex: 1 1 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.details-center h1 {
+  color: var(--red);
+  font-weight: 900;
+  font-size: 3.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  user-select: none;
+}
+
+/* SAĞ BLOK */
+.details-right {
+  flex: 0 0 280px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: right;
+  font-size: 2.5rem;
+  color: var(--red);
+  text-transform: none;
+}
+
+.details-right strong {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--red);
+}
+
+.details-right p {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: white;
+  margin: 0;
+}
+
+/* ALT BLOK (Click for more) */
+.details-bottom {
+  position: absolute;
+  bottom: -150px;
+  right: 10px;
+  pointer-events: auto;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  z-index: 15;
+}
+
+.details-bottom .click-more {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.details-bottom .click-more:hover {
+  color: var(--red);
+}
+
+/* Video indikatörleri */
+.video-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 20;
+}
+
+.video-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.video-indicator.active {
+  transform: scale(1.5);
+}
+
+.progress-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: conic-gradient(rgba(200, 9, 9, 0.7) 0deg, transparent 0deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .details-container {
+    flex-direction: column;
+    top: 45%;
+    gap: 20px;
+    padding: 0 20px;
+    width: 90vw;
+    transform: translate(-50%, -50%);
+  }
+
+  .details-left,
+  .details-right {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .details-center h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .details-container {
+    top: 40%;
+    padding: 0 15px;
+    width: 95vw;
+  }
+
+  .details-center h1 {
+    font-size: 2rem;
+  }
+
+  .details-left strong,
+  .details-right strong,
+  .details-left p,
+  .details-right p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Çok küçük mobil */
+@media (max-width: 480px) {
+  .details-center h1 {
+    font-size: 1.6rem;
+  }
+
+  .details-left strong,
+  .details-right strong {
+    font-size: 1rem;
+  }
+
+  .details-left p,
+  .details-right p {
+    font-size: 0.85rem;
+  }
+
+  .details-bottom {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .video-indicators {
+    bottom: 15px;
+    gap: 10px;
+  }
+
+  .video-indicator {
+    width: 12px;
+    height: 12px;
+  }
+
+  .video-indicator.active {
+    transform: scale(1.2);
+  }
+
+  .progress-ring {
+    width: 18px;
+    height: 18px;
+    top: -2px;
+    left: -2px;
+  }
+}

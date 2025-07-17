@@ -1,0 +1,254 @@
+.fullscreen-image-section {
+  position: relative;
+  top: 50px;
+  padding-bottom: 60px;
+  height: 85vh;
+  margin: 0 60px;
+  overflow: hidden;
+  /* Sadece üst köşeleri yuvarlak yap */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /* Alt köşeler düz kalır */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.clickable-area {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.clickable-area:hover .media-container {
+  transform: scale(1.0);
+}
+
+.background-image,
+.hover-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  border-radius: 20px;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hover-video {
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clickable-area:hover .hover-video {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.clickable-area:hover .background-image {
+  opacity: 0.4;
+}
+
+.main-title,
+.main-subtitle {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  user-select: none;
+  margin: 0;
+  pointer-events: none;
+}
+
+.main-title {
+  bottom: 120px;
+  left: 60px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.main-subtitle {
+  bottom: 90px;
+  right: 60px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  text-align: right;
+  line-height: 1.4;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+.information {
+  position: absolute;
+  bottom: 10px;
+  right: 60px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.4rem;
+  color: white;
+  text-align: left;
+  line-height: 1.4;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  z-index: 5;
+  pointer-events: none;
+}
+/* Başlangıçta gizli, aşağıdan hafif kaymış */
+.fullscreen-image-section,
+.fullscreen-image-section .main-title,
+.fullscreen-image-section .main-subtitle,
+.fullscreen-image-section .information {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+  pointer-events: none;
+}
+
+/* Animasyon ile görünür olunca */
+.fullscreen-image-section.scroll-visible,
+.fullscreen-image-section.scroll-visible .main-title,
+.fullscreen-image-section.scroll-visible .main-subtitle,
+.fullscreen-image-section.scroll-visible .information {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Farklı gecikmelerle daha güzel efekt */
+.fullscreen-image-section.scroll-visible .main-title {
+  transition-delay: 0.3s;
+}
+
+.fullscreen-image-section.scroll-visible .main-subtitle {
+  transition-delay: 0.5s;
+}
+
+.fullscreen-image-section.scroll-visible .information {
+  transition-delay: 0.7s;
+}
+
+/* Responsive tasarımlar */
+@media (max-width: 1024px) {
+  .fullscreen-image-section {
+    margin: 0 30px;
+    height: 75vh;
+    top: 40px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    left: 40px;
+    bottom: 100px;
+  }
+
+  .main-subtitle {
+    font-size: 1.4rem;
+    right: 40px;
+    bottom: 70px;
+  }
+
+  .information {
+    font-size: 1.2rem;
+    right: 40px;
+    bottom: 15px;
+  }
+
+  .media-container,
+  .background-image,
+  .hover-video {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fullscreen-image-section {
+    margin: 0 20px;
+    height: 65vh;
+    top: 30px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding-bottom: 50px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+    left: 25px;
+    bottom: 80px;
+  }
+
+  .main-subtitle {
+    font-size: 1.2rem;
+    right: 25px;
+    bottom: 60px;
+  }
+
+  .information {
+    font-size: 1rem;
+    right: 25px;
+    bottom: 10px;
+  }
+
+  .media-container,
+  .background-image,
+  .hover-video {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-image-section {
+    margin: 0 12px;
+    height: 55vh;
+    top: 20px;
+    padding-bottom: 40px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+    left: 15px;
+    bottom: 60px;
+  }
+
+  .main-subtitle {
+    font-size: 1rem;
+    right: 15px;
+    bottom: 40px;
+  }
+
+  .information {
+    font-size: 0.9rem;
+    right: 15px;
+    bottom: 8px;
+  }
+
+  .media-container,
+  .background-image,
+  .hover-video {
+    border-radius: 12px;
+  }
+}

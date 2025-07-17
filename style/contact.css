@@ -1,0 +1,246 @@
+/* -----------------------------
+  CONTACT SECTION
+----------------------------- */
+
+.contact-container {
+  max-width: 1200px;
+  margin: 8rem auto 6rem auto;
+  padding: 0 20px;
+  font-family: 'Chakra Petch', sans-serif;
+  color: #f5f5f5;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Yatay taşmayı engelle */
+}
+
+/* Başlık */
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ff3b3b;
+  text-shadow: 0 0 10px rgba(255, 59, 59, 0.3);
+}
+
+/* İçerik düzeni */
+.contact-content {
+  display: flex;
+  flex-wrap: nowrap; /* Yan yana sığması için */
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden; /* Taşma varsa gizle */
+}
+
+/* Form kısmı */
+.contact-form {
+  flex: 0 1 55%; /* %55 genişlik, esnek */
+  min-width: 350px;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 59, 59, 0.1);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+/* Form etiketleri ve alanları */
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ddd;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: #292929;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 15px;
+  color: #f0f0f0;
+  font-size: 1rem;
+  font-family: 'Chakra Petch', sans-serif;
+  margin-bottom: 20px;
+  resize: vertical;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: #333;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #ff3b3b;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e60012;
+  box-shadow: 0 0 20px rgba(230, 0, 18, 0.5);
+}
+
+/* Bilgi kısmı */
+.contact-info {
+  flex: 0 1 40%; /* %40 genişlik */
+  min-width: 300px;
+  background: #212121;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.contact-info h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #ff3b3b;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ff3b3b;
+  padding-bottom: 10px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  margin: 12px 0;
+  color: #ccc;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.contact-info i {
+  color: #ff3b3b;
+  font-size: 1.3rem;
+}
+
+/* Telefon bağlantısı */
+.contact-info a[href^="tel"] {
+  color: #f5f5f5;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1rem;
+}
+
+.contact-info a[href^="tel"]:hover {
+  color: #ff1c1c;
+  text-decoration: underline;
+}
+
+/* E-posta bağlantısı */
+.contact-info a[href^="mailto"] {
+  color: #f5f5f5;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.contact-info a[href^="mailto"]:hover {
+  color: #ff1c1c;
+  text-decoration: underline;
+}
+
+/* Sosyal Medya */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #ff3b3b;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+/* -----------------------------
+  RESPONSIVE
+----------------------------- */
+
+@media (max-width: 1024px) {
+  .contact-container {
+    max-width: 90vw;
+  }
+  
+  .contact-content {
+    flex-wrap: wrap; /* Alt satıra geçmesine izin ver */
+    gap: 30px;
+  }
+
+  .contact-form,
+  .contact-info {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button,
+  .contact-info h2,
+  .contact-info p {
+    font-size: 0.95rem;
+  }
+  
+  .contact-form button {
+    padding: 10px 20px;
+  }
+
+  .social-icons a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button,
+  .contact-info h2,
+  .contact-info p {
+    font-size: 0.85rem;
+  }
+
+  .social-icons a {
+    font-size: 1.1rem;
+  }
+  
+  .contact-container {
+    margin: 4rem auto 3rem auto;
+  }
+}

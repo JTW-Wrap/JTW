@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site Under Maintenance</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Chakra Petch', sans-serif;
+      background: black;
+      color: white;
+    }
+
+    video.bg-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: rgba(0, 0, 0, 0.5); /* hafif karartma efekti */
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 56px;
+      color: #ff0015;
+      text-shadow: 0 0 8px rgba(255, 0, 21, 0.8);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+  </style>
+
+  <!-- Switch.js bakımı kontrol eder -->
+  <script src="switch.js"></script>
+</head>
+<body>
+
+  <!-- Arka plan videosu -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="../public/video/cleanpro.mp4" type="video/mp4" />
+    <!-- Not: Video yolu dizin yapına göre değişebilir -->
+  </video>
+
+  <!-- Yazı katmanı -->
+  <div class="overlay">
+    <h1>We'll Be Back Soon</h1>
+    <p>Our website is currently undergoing scheduled maintenance.<br>Please check back shortly.</p>
+  </div>
+
+</body>
+</html>

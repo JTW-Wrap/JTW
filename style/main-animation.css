@@ -1,0 +1,17 @@
+/* Scroll ile görünürlük animasyonu */
+.content-wrapper {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+  }
+  
+  .content-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .hero.scrolled .hero-overlay {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  

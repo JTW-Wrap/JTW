@@ -1,0 +1,169 @@
+.site-footer {
+  background-color: #181818;
+  color: white;
+  padding: 50px 40px 30px;
+  margin-top: 150px;
+  font-family: 'Chakra Petch', sans-serif;
+  user-select: none;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SOL ALAN (FILMS + SERVICES) */
+.footer-left-section {
+  display: flex;
+  gap: 60px;
+}
+
+/* SAĞ ALAN (COMPANY + SOCIAL) */
+.footer-right-section {
+  display: flex;
+  gap: 60px;
+}
+
+/* ORTA LOGO ALANI */
+.footer-center-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  padding: 0 40px;
+}
+
+.footer-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 7rem;      /* büyüttük */
+  font-weight: bold;
+  color: #ff0033;
+  margin-top: 0px;       /* yukarıdan boşluk */
+  margin-bottom: 0px;
+  animation: pulseLogo 2.5s ease-in-out infinite alternate;
+}
+
+
+@keyframes pulseLogo {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 6px #dc143c66;
+  }
+  100% {
+    transform: scale(1.07);
+    text-shadow: 0 0 20px #dc143caa;
+  }
+}
+
+/* GENEL GRUP STİLLERİ */
+.footer-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.footer-group h4 {
+  color: #dc143c;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.footer-group a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-group a:hover {
+  color: #dc143c;
+}
+
+/* SOSYAL ALAN (dikey) */
+.social-icons.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+.social-icons.vertical a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icons.vertical a:hover {
+  color: #dc143c;
+}
+
+/* Kopya yazısı */
+.footer-copy {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+
+/* RESPONSIVE: TABLET */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-left-section,
+  .footer-right-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-center-section {
+    padding: 20px 0;
+  }
+
+  .footer-logo {
+    font-size: 2.5rem;
+  }
+
+  .social-icons.vertical {
+    align-items: center;
+  }
+}
+
+/* RESPONSIVE: MOBILE */
+@media (max-width: 480px) {
+  .footer-logo {
+    font-size: 2.2rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    padding: 0 10px;
+  }
+
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .social-icons.vertical a {
+    font-size: 0.95rem;
+  }
+}

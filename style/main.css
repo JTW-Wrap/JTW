@@ -1,0 +1,420 @@
+:root {
+  --red: #ff0015;
+}
+
+/* -----------------------------
+  GENEL AYARLAR
+----------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
+  background: #121212;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  visibility: visible;
+  box-sizing: border-box;
+}
+
+/* -----------------------------
+  NAVBAR
+----------------------------- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 20px;
+  background-color: transparent;
+  backdrop-filter: none;
+  transition: top 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+  z-index: 1000;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+nav.hide {
+  top: -100px;
+}
+
+/* -----------------------------
+  LOGO - Sol
+----------------------------- */
+#center-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+/* -----------------------------
+  ORTA MENÜ
+----------------------------- */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  font-weight: 200;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  color: var(--red);
+}
+
+/* -----------------------------
+  SAĞ MENÜ
+----------------------------- */
+.right-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  white-space: nowrap;
+  min-width: 100px;
+
+  /* 🛠 main.html'deki fazla sağa kaymayı engelle */
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+
+/* -----------------------------
+  USER BUTTON
+----------------------------- */
+#userBtn {
+  visibility: hidden;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+/* -----------------------------
+  KONUM BUTONU
+----------------------------- */
+.location-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  outline: none;
+}
+
+/* -----------------------------
+  KONUM LİSTESİ
+----------------------------- */
+.location-list {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+  z-index: 1000;
+}
+
+.location-list a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.location-list a:hover {
+  text-decoration: underline;
+}
+
+.location-list.show,
+.location-list:not(.hidden) {
+  display: flex;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* -----------------------------
+  DİL SEÇİCİ
+----------------------------- */
+#language-switcher {
+  display: flex;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--red);
+  user-select: none;
+
+
+  /* 🛠 main.html'deki sağ kaymayı engelle */
+  margin-right: -40px; /* 👈 boşlukla sağa yasla */
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+
+.lang-btn {
+  cursor: pointer;
+  padding: 0 5px;
+  color: #eee;
+  background: none;
+  border: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: #ffffff;
+}
+
+.lang-separator {
+  color: #eee;
+  padding: 0 4px;
+}
+:root {
+  --red: #ff0015;
+}
+
+/* ... mevcut kodun devamı ... */
+
+/* --------------- Video detaylar için özel stiller --------------- */
+.details-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 150px;
+}
+
+/* Soldaki 3 satırlık metin */
+.details-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-basis: 30%;
+  font-weight: 700;
+  font-size: 22px; /* Daha büyük yazı */
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+/* Ortadaki kırmızı büyük başlık */
+.details-center {
+  flex-basis: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--red); /* Kırmızı */
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Sağdaki garanti metni */
+.details-right {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 20px; /* Daha büyük */
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
+/* Sağ alt köşedeki "Click for More" */
+.details-bottom {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+.click-more {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(230, 0, 0, 0.85);
+  padding: 6px 14px;
+  border-radius: 5px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.click-more:hover {
+  background: var(--red);
+}
+
+/* Responsive iyileştirme */
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    min-height: auto;
+    padding: 15px 20px;
+  }
+
+  .details-left, .details-center, .details-right {
+    flex-basis: 100%;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .details-left {
+    font-size: 18px;
+    gap: 6px;
+  }
+
+  .film-title {
+    font-size: 28px;
+  }
+
+  .details-right {
+    font-size: 18px;
+  }
+
+  .details-bottom {
+    position: static;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+/* -----------------------------
+  RESPONSIVE TASARIM
+----------------------------- */
+@media (max-width: 1024px) {
+  nav {
+    height: 64px;
+    padding: 0 14px;
+  }
+
+  #center-logo {
+    font-size: 22px;
+  }
+
+  .main-nav {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .right-menu {
+    gap: 12px;
+  }
+
+  #language-switcher {
+    font-size: 12px;
+  }
+
+  .lang-btn {
+    font-size: 12px;
+  }
+
+  #userBtn {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  #center-logo {
+    font-size: 20px;
+  }
+
+  .main-nav {
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .right-menu {
+    gap: 10px;
+  }
+
+  .lang-btn {
+    font-size: 11px;
+  }
+
+  #userBtn {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    height: 56px;
+    padding: 0 8px;
+  }
+
+  .main-nav {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  #center-logo {
+    font-size: 18px;
+  }
+
+  .right-menu {
+    gap: 8px;
+  }
+
+  .lang-btn {
+    font-size: 10px;
+  }
+
+  #userBtn {
+    width: 18px;
+    height: 18px;
+  }
+}
