@@ -323,6 +323,7 @@ nav.hide {
 /* -----------------------------
   Responsive iyileştirme
 ----------------------------- */
+
 @media (max-width: 1024px) {
   nav {
     height: 64px;
@@ -335,24 +336,25 @@ nav.hide {
 
   .main-nav {
     gap: 10px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .right-menu {
     gap: 12px;
+    min-width: 110px;
   }
 
   #language-switcher {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .lang-btn {
-    font-size: 12px;
+    font-size: 13px;
+    padding: 3px 8px;
   }
 
-  #userBtn {
-    width: 22px;
-    height: 22px;
+  .location-icon {
+    font-size: 16px;
   }
 }
 
@@ -368,57 +370,48 @@ nav.hide {
 
   .main-nav {
     gap: 8px;
-    font-size: 11px;
-    flex-wrap: wrap;      /* Önemli */
-    overflow-x: visible;  /* Önemli */
+    font-size: 12px;
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 
   .main-nav a {
-    white-space: normal;  /* Önemli */
+    white-space: normal;
   }
 
   .right-menu {
     gap: 10px;
+    min-width: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
-  .lang-btn {
-    font-size: 11px;
-  }
-
-  #userBtn {
-    width: 20px;
-    height: 20px;
-  }
-
-  .details-container {
-    flex-direction: column;
-    min-height: auto;
-    padding: 15px 20px;
-  }
-
-  .details-left, .details-center, .details-right {
-    flex-basis: 100%;
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .details-left {
-    font-size: 18px;
+  #language-switcher {
+    font-size: 12px;
     gap: 6px;
   }
 
-  .film-title {
-    font-size: 28px;
+  .lang-btn {
+    font-size: 12px;
+    padding: 3px 6px;
   }
 
-  .details-right {
-    font-size: 18px;
+  .location-icon {
+    font-size: 15px;
   }
 
-  .details-bottom {
-    position: static;
-    margin-top: 15px;
-    text-align: center;
+  /* Mobil/tabletde konum listesini ekran genişliğine göre yap */
+  .location-list {
+    position: fixed;
+    top: 60px; /* navbar altı */
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    width: auto;
+    border-radius: 10px;
+    padding: 12px 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    z-index: 1200;
   }
 }
 
@@ -430,13 +423,13 @@ nav.hide {
 
   .main-nav {
     gap: 6px;
-    font-size: 10px;
-    flex-wrap: wrap;      /* Önemli */
-    overflow-x: visible;  /* Önemli */
+    font-size: 11px;
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 
   .main-nav a {
-    white-space: normal;  /* Önemli */
+    white-space: normal;
   }
 
   #center-logo {
@@ -444,15 +437,31 @@ nav.hide {
   }
 
   .right-menu {
-    gap: 8px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-width: auto;
+  }
+
+  #language-switcher {
+    font-size: 11px;
+    gap: 5px;
   }
 
   .lang-btn {
-    font-size: 10px;
+    font-size: 11px;
+    padding: 2px 5px;
   }
 
-  #userBtn {
-    width: 18px;
-    height: 18px;
+  .location-icon {
+    font-size: 14px;
+  }
+
+  .location-list {
+    top: 55px;
+    left: 5px;
+    right: 5px;
+    padding: 10px 14px;
+    border-radius: 8px;
   }
 }

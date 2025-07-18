@@ -20,8 +20,7 @@
 
 /* Yazı sütunu (sol) */
 .text-column {
-  flex: 1;
-  min-width: 300px;
+  flex: 1 1 320px; /* minimum 320px, esnek */
   max-width: 700px;
   display: flex;
   flex-direction: column;
@@ -32,14 +31,14 @@
 .text-column h3 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   margin: 0;
   color: white;
 }
 
 .text-column p {
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   margin: 0;
   color: #eee;
   line-height: 1.4;
@@ -48,23 +47,21 @@
 /* Görsel kutusu (sağ) */
 .information-card {
   position: relative;
-  flex: 1;
+  flex: 1 1 320px; /* minimum 320px, esnek */
   max-width: 800px;
-  height: 700px;
+  aspect-ratio: 4 / 5; /* oran sabit */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
-  display: block;
-  text-decoration: none;
-  color: inherit;
   user-select: none;
+  background-color: #111; /* boşluklar için */
 }
 
 .information-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 20px 50px rgb(117, 8, 8);
+  box-shadow: 0 20px 50px rgb(117 8 8);
   z-index: 5;
 }
 
@@ -123,31 +120,7 @@
   opacity: 0;
 }
 
-/* Hover ile değişim */
-.image-card:hover .media-container img.hover-image {
-  opacity: 1;
-}
-
-.image-card:hover .media-container img.main-image {
-  opacity: 0;
-}
-
-/* Üst sol köşede başlık (opsiyonel) */
-.image-card .contact-title {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* =============================
-   ANİMASYONLU GÖRÜNÜRLÜK
-============================= */
+/* Animasyonlu görünürlük */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -155,12 +128,12 @@
   pointer-events: none;
 }
 
-/* Sol metin için özel animasyon başlangıcı (soldan kayma) */
+/* Sol metin için başlangıç animasyonu (soldan kayma) */
 .text-column.scroll-animate {
   transform: translateX(-40px);
 }
 
-/* Sağ görsel için özel animasyon başlangıcı (sağdan kayma) */
+/* Sağ görsel için başlangıç animasyonu (sağdan kayma) */
 .information-card.scroll-animate {
   transform: translateX(40px);
 }
@@ -188,13 +161,15 @@
 ============================= */
 @media (max-width: 1024px) {
   .text-column h3 {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 2vw, 2rem);
   }
   .text-column p {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
   }
-  .image-card {
-    height: 480px;
+  .information-card {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
   }
 }
 
@@ -205,19 +180,19 @@
   }
   .text-column {
     max-width: 100%;
-    min-width: unset;
+    min-width: auto;
   }
   .text-column h3 {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   }
   .text-column p {
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
   }
-  .image-card {
+  .information-card {
     max-width: 100%;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
   }
   .media-container img {
     position: static;
@@ -229,12 +204,12 @@
 
 @media (max-width: 480px) {
   .text-column h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
   }
   .text-column p {
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
   }
-  .image-card {
+  .information-card {
     height: auto;
   }
 }

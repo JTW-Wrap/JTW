@@ -5,10 +5,8 @@
   height: 85vh;
   margin: 0 60px;
   overflow: hidden;
-  /* Sadece üst köşeleri yuvarlak yap */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  /* Alt köşeler düz kalır */
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-size: cover;
@@ -83,7 +81,7 @@
   user-select: none;
   margin: 0;
   pointer-events: none;
-  max-width: 90vw; /* Genişlik taşmasını engelle */
+  max-width: 90vw;
   word-wrap: break-word;
   box-sizing: border-box;
 }
@@ -116,7 +114,6 @@
   text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
 }
 
-/* Başlangıçta gizli, aşağıdan hafif kaymış */
 .fullscreen-image-section,
 .fullscreen-image-section .main-title,
 .fullscreen-image-section .main-subtitle,
@@ -127,7 +124,6 @@
   pointer-events: none;
 }
 
-/* Animasyon ile görünür olunca */
 .fullscreen-image-section.scroll-visible,
 .fullscreen-image-section.scroll-visible .main-title,
 .fullscreen-image-section.scroll-visible .main-subtitle,
@@ -138,7 +134,6 @@
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Farklı gecikmelerle daha güzel efekt */
 .fullscreen-image-section.scroll-visible .main-title {
   transition-delay: 0.3s;
 }
@@ -151,7 +146,8 @@
   transition-delay: 0.7s;
 }
 
-/* Responsive tasarımlar */
+/* Responsive */
+
 @media (max-width: 1024px) {
   .fullscreen-image-section {
     margin: 0 30px;

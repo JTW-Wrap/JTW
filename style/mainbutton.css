@@ -13,7 +13,7 @@
 
 #top-right select {
   background: transparent;
-  font-family: 'Orbitron', sans-serif; /* istediğin font */
+  font-family: 'Orbitron', sans-serif;
   color: #ccc;
   border: 1px solid #888;
   padding: 6px 10px;
@@ -82,8 +82,8 @@
     align-items: flex-end;
     gap: 8px;
     margin-right: 10px;
-    white-space: normal; /* satır taşmasına izin ver */
-    flex-wrap: wrap; /* taşarsa alt satıra geçsin */
+    white-space: normal; /* Satır taşmasına izin ver */
+    flex-wrap: wrap; /* Taşarsa alt satıra geçsin */
   }
 
   #top-right select {

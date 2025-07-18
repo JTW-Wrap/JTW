@@ -18,8 +18,8 @@
   object-fit: cover; /* Ekranı kapla */
   transform: translate(-50%, -50%);
   z-index: 0;
-  opacity: 0.7;
-  pointer-events: none;
+  opacity: 0.7; /* Hafif şeffaflık */
+  pointer-events: none; /* Video üzerine tıklamayı engelle */
 }
 
 .wash-image .main-text {
@@ -30,7 +30,7 @@
   padding: 20px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   max-width: 90%;
-  user-select: none;
+  user-select: none; /* Metnin seçilmesini engelle */
 }
 
 .wash-image .main-text h1 {

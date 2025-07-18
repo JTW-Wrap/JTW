@@ -5,6 +5,7 @@
   margin-top: 150px;
   font-family: 'Chakra Petch', sans-serif;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .footer-wrapper {
@@ -14,6 +15,7 @@
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 40px;
 }
 
 /* Sol alan (Films + Services) */
@@ -41,11 +43,10 @@
 
 .footer-logo {
   font-family: 'Orbitron', sans-serif;
-  font-size: 7rem; /* büyük */
+  font-size: clamp(3rem, 7vw, 7rem);
   font-weight: bold;
   color: #ff0033;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   animation: pulseLogo 2.5s ease-in-out infinite alternate;
 }
 
@@ -116,6 +117,7 @@
   color: #888;
   font-size: 0.9rem;
   margin-top: 30px;
+  user-select: none;
 }
 
 /* Responsive: Tablet */

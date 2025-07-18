@@ -17,6 +17,7 @@
     width: 100%;
   }
   
+  /* Text column - animasyonlu, minimum genişlik ve esnek */
   .custom-text-column {
     flex: 1 1 45%;
     max-width: 45%;
@@ -30,41 +31,46 @@
     opacity: 0;
     transform: translateY(20px);
     transition: all 1.5s ease;
-    min-width: 280px; /* Küçük ekranlarda minimum genişlik */
+    min-width: 280px;
   }
   
-  /* Scroll ile görünür olduğunda animasyon başlasın */
+  /* Görünürlük animasyonu */
   .extra-section.animate-in .custom-text-column {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.8s;
   }
   
+  /* Başlık */
   .custom-text-column h2 {
     font-weight: 700;
-    font-size: 1.9rem;
+    font-size: clamp(1.5rem, 2vw, 1.9rem); /* Daha akıcı font boyutu */
     margin: 30px 0 10px 0;
     color: #ff0015;
     letter-spacing: 1px;
   }
   
+  /* Paragraf */
   .custom-text-column p {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem); /* Responsive yazı boyutu */
     line-height: 1.9;
     color: #ddd;
   }
   
+  /* Vurgu */
   .custom-text-column strong {
     color: #fff;
     font-weight: 700;
   }
   
+  /* İkon renk ve margin */
   .custom-text-column i {
     margin-right: 6px;
     color: #ff0015;
   }
   
+  /* Görsel kartı */
   .custom-image-card {
     flex: 1 1 50%;
     max-width: 50%;
@@ -81,15 +87,16 @@
     opacity: 0;
     transform: scale(0.95);
     transition: all 1.5s ease;
-    min-width: 320px; /* Küçük ekranlarda minimum genişlik */
+    min-width: 320px;
   }
   
-  /* Scroll ile görünür olduğunda animasyon başlasın */
+  /* Görünürlük animasyonu */
   .extra-section.animate-in .custom-image-card {
     opacity: 1;
     transform: scale(1);
   }
   
+  /* Medya kapsayıcı */
   .custom-media-container {
     position: relative;
     width: 100%;
@@ -98,6 +105,7 @@
     overflow: hidden;
   }
   
+  /* Görsel ve video stil */
   .custom-media-container img,
   .custom-media-container video {
     position: absolute;
@@ -112,8 +120,11 @@
     display: block;
     pointer-events: none;
     user-select: none;
+    backface-visibility: hidden;
+    will-change: opacity;
   }
   
+  /* Görüntü ve video z-index */
   .custom-media-container img {
     opacity: 1;
     z-index: 1;
@@ -126,7 +137,7 @@
     user-select: auto;
   }
   
-  /* Hover ile video göster */
+  /* Hover ile video göster, görüntüyü gizle */
   .custom-image-card:hover .custom-media-container video {
     opacity: 1;
   }
@@ -153,7 +164,7 @@
   .basic-title {
     color: #ff0015;
     font-weight: 700;
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
     margin-bottom: 25px;
     letter-spacing: 1.2px;
     text-transform: uppercase;
@@ -161,7 +172,7 @@
   }
   
   .basic-paragraph {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     line-height: 1.8;
     margin-bottom: 20px;
     max-width: 1050px;
