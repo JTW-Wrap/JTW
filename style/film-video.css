@@ -44,6 +44,7 @@
   color: #e60012;
   margin-bottom: 10px;
   line-height: 1.1;
+  word-wrap: break-word;
 }
 
 /* Alt açıklama */
@@ -53,21 +54,23 @@
   color: #ddd;
   margin: 0;
   line-height: 1.3;
+  word-wrap: break-word;
 }
 
-/* Mobil uyumlu yazılar */
+/* Tablet - Büyük ekranlar */
 @media (max-width: 1024px) {
   .film-image .main-text h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
   .film-image .main-text p {
     font-size: 18px;
   }
 }
 
+/* Orta boy ekranlar */
 @media (max-width: 768px) {
   .film-image .main-text h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .film-image .main-text p {
@@ -75,13 +78,18 @@
   }
 }
 
+/* Küçük ekranlar */
 @media (max-width: 480px) {
+  .film-image {
+    height: 70vh; /* Çok küçük ekranlarda biraz yükseklik azalt */
+  }
+
   .film-image .main-text {
     padding: 15px;
   }
 
   .film-image .main-text h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .film-image .main-text p {

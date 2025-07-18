@@ -20,6 +20,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .video-item.active {
@@ -35,6 +36,7 @@ html, body {
   overflow: hidden;
   background: none;
   z-index: 0;
+  box-sizing: border-box;
 }
 
 .main-image video {
@@ -50,6 +52,7 @@ html, body {
   backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  box-sizing: border-box;
 }
 
 /* Detay içerik */
@@ -78,6 +81,7 @@ html, body {
 .details-right,
 .details-bottom {
   pointer-events: auto;
+  box-sizing: border-box;
 }
 
 /* SOL BLOK */
@@ -92,6 +96,7 @@ html, body {
   font-size: 2.5rem;
   color: var(--red);
   text-transform: none;
+  box-sizing: border-box;
 }
 
 .details-left strong {
@@ -108,6 +113,9 @@ html, body {
   color: white;
   margin: 0;
   line-height: 1.4;
+  max-width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* ORTA BLOK */
@@ -118,6 +126,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .details-center h1 {
@@ -129,6 +138,8 @@ html, body {
   letter-spacing: 2px;
   line-height: 1.1;
   user-select: none;
+  max-width: 90vw;
+  word-wrap: break-word;
 }
 
 /* SAĞ BLOK */
@@ -143,6 +154,7 @@ html, body {
   font-size: 2.5rem;
   color: var(--red);
   text-transform: none;
+  box-sizing: border-box;
 }
 
 .details-right strong {
@@ -159,6 +171,9 @@ html, body {
   line-height: 1.1;
   color: white;
   margin: 0;
+  max-width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* ALT BLOK (Click for more) */
@@ -171,6 +186,7 @@ html, body {
   white-space: nowrap;
   display: flex;
   z-index: 15;
+  box-sizing: border-box;
 }
 
 .details-bottom .click-more {
@@ -201,6 +217,7 @@ html, body {
   display: flex;
   gap: 20px;
   z-index: 20;
+  box-sizing: border-box;
 }
 
 .video-indicator {
@@ -211,6 +228,7 @@ html, body {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
 
 .video-indicator.active {
@@ -227,6 +245,7 @@ html, body {
   background: conic-gradient(rgba(200, 9, 9, 0.7) 0deg, transparent 0deg);
   z-index: -1;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 /* Tablet */

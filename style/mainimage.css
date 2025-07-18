@@ -14,6 +14,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .clickable-area {
@@ -35,6 +37,7 @@
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.5s ease;
+  box-sizing: border-box;
 }
 
 .clickable-area:hover .media-container {
@@ -53,6 +56,7 @@
   transition: opacity 0.5s ease;
   z-index: 1;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .hover-video {
@@ -71,13 +75,17 @@
 }
 
 .main-title,
-.main-subtitle {
+.main-subtitle,
+.information {
   position: absolute;
   z-index: 5;
   color: white;
   user-select: none;
   margin: 0;
   pointer-events: none;
+  max-width: 90vw; /* Genişlik taşmasını engelle */
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .main-title {
@@ -85,34 +93,29 @@
   left: 60px;
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
-  color: white;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
 }
 
 .main-subtitle {
   bottom: 90px;
   right: 60px;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   font-size: 1.6rem;
-  color: white;
   text-align: right;
   line-height: 1.4;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
 }
 
 .information {
-  position: absolute;
   bottom: 10px;
   right: 60px;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   font-size: 1.4rem;
-  color: white;
   text-align: left;
   line-height: 1.4;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
-  z-index: 5;
-  pointer-events: none;
 }
+
 /* Başlangıçta gizli, aşağıdan hafif kaymış */
 .fullscreen-image-section,
 .fullscreen-image-section .main-title,
@@ -162,18 +165,21 @@
     font-size: 2.5rem;
     left: 40px;
     bottom: 100px;
+    max-width: 85vw;
   }
 
   .main-subtitle {
     font-size: 1.4rem;
     right: 40px;
     bottom: 70px;
+    max-width: 85vw;
   }
 
   .information {
     font-size: 1.2rem;
     right: 40px;
     bottom: 15px;
+    max-width: 85vw;
   }
 
   .media-container,
@@ -197,18 +203,21 @@
     font-size: 2rem;
     left: 25px;
     bottom: 80px;
+    max-width: 80vw;
   }
 
   .main-subtitle {
     font-size: 1.2rem;
     right: 25px;
     bottom: 60px;
+    max-width: 80vw;
   }
 
   .information {
     font-size: 1rem;
     right: 25px;
     bottom: 10px;
+    max-width: 80vw;
   }
 
   .media-container,
@@ -232,18 +241,21 @@
     font-size: 1.6rem;
     left: 15px;
     bottom: 60px;
+    max-width: 75vw;
   }
 
   .main-subtitle {
     font-size: 1rem;
     right: 15px;
     bottom: 40px;
+    max-width: 75vw;
   }
 
   .information {
     font-size: 0.9rem;
     right: 15px;
     bottom: 8px;
+    max-width: 75vw;
   }
 
   .media-container,

@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+/* Ana yazı tipi */
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  color: #fff;
+}
+
 /* Başlık */
 .category-title {
   text-align: center;
@@ -28,21 +34,23 @@
   justify-content: center;
   gap: 2rem;
   font-family: 'Orbitron', sans-serif;
-  margin: 40px 0 0 0;
+  margin: 40px 0 0;
   user-select: none;
+  flex-wrap: wrap;
 }
 
 .category-btn {
+  font-family: 'Orbitron', sans-serif;
   background: none;
   border: none;
   font-size: 1.3rem;
   font-weight: 500;
-  font-family: 'Orbitron', sans-serif;
   color: #fff;
   padding: 10px 15px;
   border-bottom: 3px solid transparent;
   cursor: pointer;
   transition: color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
 }
 
 .category-btn:hover,
@@ -66,18 +74,14 @@
   margin: 20px auto 120px;
   padding: 0;
   font-family: 'Chakra Petch', sans-serif;
-  color: white;
   background: transparent;
   box-shadow: none;
   border-radius: 10px;
   position: relative;
   overflow: visible;
-  min-height: auto;
 }
 
-/* ==========================
-   Aktif Kategori İçeriği
-========================== */
+/* Aktif içerik */
 .category-content {
   opacity: 0;
   transform: translateY(40px);
@@ -92,9 +96,7 @@
   pointer-events: auto;
 }
 
-/* ==========================
-   İçerik Flex Wrapper
-========================== */
+/* Flex wrapper */
 .image-text-wrapper {
   width: 100%;
   display: flex;
@@ -102,14 +104,12 @@
   align-items: flex-start;
   gap: 40px;
   padding: 40px 0;
-  flex-wrap: wrap; /* önemli: taşmaları engeller */
+  flex-wrap: wrap;
 }
 
-/* ==========================
-   Yazı Alanı
-========================== */
+/* Yazı alanı */
 .text-column {
-  flex: 1 1 40%; /* Esnek genişlik */
+  flex: 1 1 40%;
   max-width: 40%;
   padding-left: 20px;
   display: flex;
@@ -122,18 +122,20 @@
   opacity: 0;
   animation: fadeInText 1s ease forwards;
   animation-delay: 0.5s;
-  min-width: 280px; /* Küçük ekranlarda minimum genişlik */
+  min-width: 280px;
 }
 
 .text-column h2 {
+  font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 1.9rem;
-  margin: 30px 0 10px 0;
+  margin: 30px 0 10px;
   color: #ff0015;
   letter-spacing: 1px;
 }
 
 .text-column p {
+  font-family: 'Chakra Petch', sans-serif;
   margin: 0;
   font-size: 1.4rem;
   line-height: 1.9;
@@ -150,9 +152,7 @@
   color: #ff0015;
 }
 
-/* ==========================
-   Görsel Alanı
-========================== */
+/* Görsel alanı */
 .image-card {
   flex: 1 1 55%;
   max-width: 55%;
@@ -166,7 +166,7 @@
   align-items: center;
   justify-content: center;
   animation: fadeInImage 0.9s ease forwards;
-  min-width: 320px; /* Küçük ekranlarda minimum genişlik */
+  min-width: 320px;
 }
 
 @keyframes fadeInImage {
@@ -191,9 +191,7 @@
   }
 }
 
-/* ==========================
-   Medya Alanı
-========================== */
+/* Medya alanı */
 .media-container {
   position: relative;
   width: 100%;
@@ -235,13 +233,19 @@
   opacity: 0;
 }
 
-/* ==========================
-   Responsive Ayarlar
-========================== */
+/* Responsive */
 @media (max-width: 1024px) {
-  .text-column h2 { font-size: 1.7rem; }
-  .text-column p { font-size: 1.2rem; }
-  .image-card { height: 480px; max-width: 100%; flex: 1 1 100%; }
+  .text-column h2 {
+    font-size: 1.7rem;
+  }
+  .text-column p {
+    font-size: 1.2rem;
+  }
+  .image-card {
+    height: 480px;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
   .text-column {
     max-width: 100%;
     flex: 1 1 100%;
@@ -277,7 +281,14 @@
 }
 
 @media (max-width: 480px) {
-  .text-column h2 { font-size: 1.3rem; margin: 12px 0 6px; }
-  .text-column p { font-size: 1rem; }
-  .image-card { box-shadow: 0 4px 16px rgba(255, 0, 21, 0.3); }
+  .text-column h2 {
+    font-size: 1.3rem;
+    margin: 12px 0 6px;
+  }
+  .text-column p {
+    font-size: 1rem;
+  }
+  .image-card {
+    box-shadow: 0 4px 16px rgba(255, 0, 21, 0.3);
+  }
 }

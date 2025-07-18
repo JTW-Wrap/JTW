@@ -25,16 +25,16 @@
 /* İçerik düzeni */
 .contact-content {
   display: flex;
-  flex-wrap: nowrap; /* Yan yana sığması için */
+  flex-wrap: nowrap; /* Desktop’da yan yana */
   gap: 40px;
   justify-content: space-between;
   align-items: flex-start;
-  overflow: hidden; /* Taşma varsa gizle */
+  overflow: hidden;
 }
 
 /* Form kısmı */
 .contact-form {
-  flex: 0 1 55%; /* %55 genişlik, esnek */
+  flex: 0 1 55%;
   min-width: 350px;
   background: #1a1a1a;
   padding: 30px;
@@ -86,6 +86,7 @@
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
   transition: 0.3s ease;
+  width: fit-content;
 }
 
 .contact-form button:hover {
@@ -95,7 +96,7 @@
 
 /* Bilgi kısmı */
 .contact-info {
-  flex: 0 1 40%; /* %40 genişlik */
+  flex: 0 1 40%;
   min-width: 300px;
   background: #212121;
   padding: 30px;
@@ -161,6 +162,7 @@
   margin-top: 20px;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap; /* Taşma durumunda alt satıra geç */
 }
 
 .social-icons a {
@@ -183,7 +185,7 @@
   }
   
   .contact-content {
-    flex-wrap: wrap; /* Alt satıra geçmesine izin ver */
+    flex-wrap: wrap;
     gap: 30px;
   }
 
@@ -191,6 +193,13 @@
   .contact-info {
     flex: 1 1 100%;
     min-width: unset;
+  }
+
+  .contact-form button {
+    width: 100%; /* Butonu tam genişlik yap */
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
   }
 }
 

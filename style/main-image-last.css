@@ -12,6 +12,7 @@
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  box-sizing: border-box;
 }
 
 .section-title.scroll-visible {
@@ -26,9 +27,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;  /* <-- bu satır tüm satır ve sütun boşluklarını ayarlar */
-  margin-bottom: 50px; /* Alt boşluk */
-
+  gap: 50px; /* satır ve sütun boşlukları */
+  margin-bottom: 50px;
   padding: 0 5vw;
   box-sizing: border-box;
 }
@@ -41,7 +41,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.8s ease, transform 0.8s ease;
   cursor: pointer;
   transform-origin: center center;
   will-change: transform;
@@ -49,7 +49,6 @@
 
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .image-card.scroll-visible {
@@ -70,6 +69,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .media-container img,
@@ -84,6 +84,7 @@
   user-select: none;
   backface-visibility: hidden;
   will-change: opacity;
+  border-radius: 16px;
 }
 
 .media-container img {
@@ -123,6 +124,7 @@
   align-items: center;
   user-select: none;
   pointer-events: none;
+  border-radius: 0 0 16px 16px;
 }
 
 .text-overlay h3 {

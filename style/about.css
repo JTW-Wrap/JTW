@@ -35,6 +35,7 @@
   opacity: 0.6;
 }
 
+/* İçerik aktifken */
 .section.active .content {
   position: relative;
   z-index: 10;
@@ -63,8 +64,6 @@
 }
 
 /* TEK GÖRSEL + YAZI — TAM YAN YANA VE ORANTILI */
-
-/* Ana container: yatay flex, tam yan yana */
 .image-text {
   display: flex !important;
   justify-content: space-between;
@@ -85,17 +84,17 @@
   transform: translateY(0);
 }
 
-/* Solda görsel, sağda yazı */
+/* Görsel solda ise */
 .image-text.left-image {
   flex-direction: row !important;
 }
 
-/* Sağda görsel, solda yazı */
+/* Görsel sağda ise */
 .image-text.right-image {
   flex-direction: row-reverse !important;
 }
 
-/* Görsel stil - solda ise %45, sağda ise %55 */
+/* Görsel stil */
 .image-text.left-image img {
   width: 45% !important;
   max-height: 700px;
@@ -120,7 +119,7 @@
   transition: opacity 0.5s ease;
 }
 
-/* Hover ile görsel opacity 0, video opacity 1 */
+/* Hover efekti: görsel opacity 1, video gizlenir */
 .image-text img:hover {
   opacity: 1 !important;
   cursor: default;
@@ -131,13 +130,12 @@
   display: none !important;
 }
 
-
-/* Video styling — aynı görsel boyutunda, üstte */
+/* Video styling */
 .image-text video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Container kadar */
+  width: 100%; 
   height: 100%;
   border-radius: 20px;
   object-fit: cover;
@@ -146,16 +144,16 @@
   pointer-events: none;
 }
 
-/* Yazı alanı — solda ya da sağda kalan yüzde */
+/* Yazı alanı */
 .image-text .content-text {
-  width: 55%; /* soldaki görsel %45 ise yazı %55, tam tersi için uygun */
+  width: 55%;
   max-width: 55%;
   color: white;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-/* Sağda görsel ise yazı %45 olsun */
+/* Sağda görsel ise yazı %45 */
 .image-text.right-image .content-text {
   width: 45%;
   max-width: 45%;
@@ -187,7 +185,7 @@
   display: flex;
   gap: 30px;
   justify-content: center;
-  flex-wrap: nowrap; /* kesin yan yana */
+  flex-wrap: nowrap;
   max-width: 1500px;
   width: 100%;
   margin-top: 10px;
@@ -242,14 +240,17 @@
   z-index: 1;
   pointer-events: none;
 }
+
 .media-box:hover video {
   opacity: 1;
   z-index: 2;
 }
+
 .media-box:hover img {
   opacity: 0;
   z-index: 1;
 }
+
 .media-box p {
   position: relative;
   z-index: 3;
@@ -260,7 +261,7 @@
   background: none;
 }
 
-/* RESPONSIVE - TAM YAN YANA VE ORANTILI KALMA */
+/* RESPONSIVE */
 
 /* Tablet ve küçük laptoplar */
 @media (max-width: 1024px) {

@@ -130,6 +130,7 @@
   .custom-image-card:hover .custom-media-container video {
     opacity: 1;
   }
+  
   .custom-image-card:hover .custom-media-container img {
     opacity: 0;
   }

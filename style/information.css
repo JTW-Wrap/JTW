@@ -1,4 +1,6 @@
-/* Ana bölüm */
+/* =============================
+   ANA BÖLÜM - İKİNCİ GÖRSEL & METİN
+============================= */
 .main-second-image-section {
   max-width: 1200px;
   margin: 30px auto;
@@ -16,7 +18,7 @@
   flex-wrap: wrap;
 }
 
-/* Yazı (sol taraf) */
+/* Yazı sütunu (sol) */
 .text-column {
   flex: 1;
   min-width: 300px;
@@ -43,8 +45,7 @@
   line-height: 1.4;
 }
 
-/* Görsel kutusu (sağ taraf) */
-/* Görsel kutusu (sağ taraf) */
+/* Görsel kutusu (sağ) */
 .information-card {
   position: relative;
   flex: 1;
@@ -99,7 +100,8 @@
 /* Ana ve hover resimler */
 .media-container img {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -142,7 +144,10 @@
   pointer-events: none;
   z-index: 10;
 }
-/* Başlangıç gizli ve konumlandırılmış */
+
+/* =============================
+   ANİMASYONLU GÖRÜNÜRLÜK
+============================= */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -150,12 +155,12 @@
   pointer-events: none;
 }
 
-/* Sol metin için özel animasyon başlangıcı (soldan biraz kayarak) */
+/* Sol metin için özel animasyon başlangıcı (soldan kayma) */
 .text-column.scroll-animate {
   transform: translateX(-40px);
 }
 
-/* Sağ görsel için özel animasyon başlangıcı (sağdan kayarak) */
+/* Sağ görsel için özel animasyon başlangıcı (sağdan kayma) */
 .information-card.scroll-animate {
   transform: translateX(40px);
 }
@@ -169,17 +174,18 @@
   transition-delay: 0.3s;
 }
 
-/* Tekrar geçiş için zamanlamaları değiştirelim */
-
+/* Animasyon gecikmeleri */
 .text-column.scroll-visible {
-  transition-delay: 0.3s; /* Metin biraz önce */
+  transition-delay: 0.3s; /* Metin önce */
 }
 
 .information-card.scroll-visible {
-  transition-delay: 0.6s; /* Görsel biraz sonra */
+  transition-delay: 0.6s; /* Görsel sonra */
 }
 
-/* -------- Responsive -------- */
+/* =============================
+   RESPONSIVE
+============================= */
 @media (max-width: 1024px) {
   .text-column h3 {
     font-size: 2rem;

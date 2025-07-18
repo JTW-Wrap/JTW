@@ -10,10 +10,21 @@ html, body {
   padding: 0;
   font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   background: #121212;
-  overflow-x: hidden;
+  overflow-x: hidden;  /* Yatay taşmayı önler */
   scroll-behavior: smooth;
   visibility: visible;
   box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Görsellerin taşmasını önle */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* -----------------------------
@@ -58,6 +69,7 @@ nav.hide {
   text-decoration: none;
   text-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
   white-space: nowrap;
+  user-select: none;
 }
 
 /* -----------------------------
@@ -74,6 +86,7 @@ nav.hide {
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* iOS kaydırma iyileştirme */
 }
 
 .main-nav a {
@@ -96,8 +109,6 @@ nav.hide {
   gap: 15px;
   white-space: nowrap;
   min-width: 100px;
-
-  /* 🛠 main.html'deki fazla sağa kaymayı engelle */
   margin-right: 0 !important;
   padding-right: 0 !important;
   box-sizing: border-box;
@@ -175,10 +186,7 @@ nav.hide {
   font-size: 13px;
   color: var(--red);
   user-select: none;
-
-
-  /* 🛠 main.html'deki sağ kaymayı engelle */
-  margin-right: -40px; /* 👈 boşlukla sağa yasla */
+  margin-right: -40px; /* sağa yasla */
   padding-right: 0 !important;
   box-sizing: border-box;
 }
@@ -202,13 +210,10 @@ nav.hide {
   color: #eee;
   padding: 0 4px;
 }
-:root {
-  --red: #ff0015;
-}
 
-/* ... mevcut kodun devamı ... */
-
-/* --------------- Video detaylar için özel stiller --------------- */
+/* -----------------------------
+  Video detaylar için özel stiller
+----------------------------- */
 .details-container {
   position: relative;
   display: flex;
@@ -221,6 +226,11 @@ nav.hide {
   font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   background: rgba(0, 0, 0, 0.6);
   min-height: 150px;
+  flex-wrap: wrap; /* önemli: küçük ekranlarda sar */
+  gap: 15px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 /* Soldaki 3 satırlık metin */
@@ -234,6 +244,12 @@ nav.hide {
   font-size: 22px; /* Daha büyük yazı */
   text-transform: uppercase;
   line-height: 1.3;
+  min-width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 /* Ortadaki kırmızı büyük başlık */
@@ -242,6 +258,12 @@ nav.hide {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .film-title {
@@ -252,6 +274,7 @@ nav.hide {
   text-transform: uppercase;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
+  user-select: none;
 }
 
 /* Sağdaki garanti metni */
@@ -265,6 +288,12 @@ nav.hide {
   line-height: 1.3;
   text-transform: uppercase;
   padding-left: 15px;
+  min-width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 /* Sağ alt köşedeki "Click for More" */
@@ -291,42 +320,8 @@ nav.hide {
   background: var(--red);
 }
 
-/* Responsive iyileştirme */
-@media (max-width: 768px) {
-  .details-container {
-    flex-direction: column;
-    min-height: auto;
-    padding: 15px 20px;
-  }
-
-  .details-left, .details-center, .details-right {
-    flex-basis: 100%;
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .details-left {
-    font-size: 18px;
-    gap: 6px;
-  }
-
-  .film-title {
-    font-size: 28px;
-  }
-
-  .details-right {
-    font-size: 18px;
-  }
-
-  .details-bottom {
-    position: static;
-    margin-top: 15px;
-    text-align: center;
-  }
-}
-
 /* -----------------------------
-  RESPONSIVE TASARIM
+  Responsive iyileştirme
 ----------------------------- */
 @media (max-width: 1024px) {
   nav {
@@ -374,6 +369,12 @@ nav.hide {
   .main-nav {
     gap: 8px;
     font-size: 11px;
+    flex-wrap: wrap;      /* Önemli */
+    overflow-x: visible;  /* Önemli */
+  }
+
+  .main-nav a {
+    white-space: normal;  /* Önemli */
   }
 
   .right-menu {
@@ -388,6 +389,37 @@ nav.hide {
     width: 20px;
     height: 20px;
   }
+
+  .details-container {
+    flex-direction: column;
+    min-height: auto;
+    padding: 15px 20px;
+  }
+
+  .details-left, .details-center, .details-right {
+    flex-basis: 100%;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .details-left {
+    font-size: 18px;
+    gap: 6px;
+  }
+
+  .film-title {
+    font-size: 28px;
+  }
+
+  .details-right {
+    font-size: 18px;
+  }
+
+  .details-bottom {
+    position: static;
+    margin-top: 15px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -399,6 +431,12 @@ nav.hide {
   .main-nav {
     gap: 6px;
     font-size: 10px;
+    flex-wrap: wrap;      /* Önemli */
+    overflow-x: visible;  /* Önemli */
+  }
+
+  .main-nav a {
+    white-space: normal;  /* Önemli */
   }
 
   #center-logo {

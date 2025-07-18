@@ -6,11 +6,14 @@
   align-items: center;
   gap: 12px;
   white-space: nowrap;
+  flex-wrap: nowrap; /* Yatay taşmayı önler */
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 #top-right select {
   background: transparent;
-  font-family: 'Orbitron', sans-serif; /* veya istediğin font */
+  font-family: 'Orbitron', sans-serif; /* istediğin font */
   color: #ccc;
   border: 1px solid #888;
   padding: 6px 10px;
@@ -20,6 +23,11 @@
   cursor: pointer;
   transition: border 0.3s ease;
   min-width: 80px;
+  max-width: 100%; /* Taşmayı engellemek için */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 #top-right select:hover {
@@ -40,6 +48,7 @@
   padding: 0;
   min-width: 32px;
   min-height: 32px;
+  box-sizing: border-box;
 }
 
 #top-right button:hover {
@@ -73,6 +82,8 @@
     align-items: flex-end;
     gap: 8px;
     margin-right: 10px;
+    white-space: normal; /* satır taşmasına izin ver */
+    flex-wrap: wrap; /* taşarsa alt satıra geçsin */
   }
 
   #top-right select {
@@ -80,6 +91,9 @@
     padding: 5px 8px;
     border-radius: 16px;
     min-width: 65px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   #top-right button {
@@ -93,6 +107,8 @@
   #top-right {
     gap: 6px;
     margin-right: 8px;
+    white-space: normal;
+    flex-wrap: wrap;
   }
 
   #top-right select {
@@ -100,6 +116,9 @@
     padding: 4px 7px;
     border-radius: 14px;
     min-width: 60px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   #top-right button {

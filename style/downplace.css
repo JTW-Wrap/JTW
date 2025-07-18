@@ -16,19 +16,19 @@
   margin: 0 auto;
 }
 
-/* SOL ALAN (FILMS + SERVICES) */
+/* Sol alan (Films + Services) */
 .footer-left-section {
   display: flex;
   gap: 60px;
 }
 
-/* SAĞ ALAN (COMPANY + SOCIAL) */
+/* Sağ alan (Company + Social) */
 .footer-right-section {
   display: flex;
   gap: 60px;
 }
 
-/* ORTA LOGO ALANI */
+/* Orta logo alanı */
 .footer-center-section {
   display: flex;
   flex-direction: column;
@@ -41,14 +41,13 @@
 
 .footer-logo {
   font-family: 'Orbitron', sans-serif;
-  font-size: 7rem;      /* büyüttük */
+  font-size: 7rem; /* büyük */
   font-weight: bold;
   color: #ff0033;
-  margin-top: 0px;       /* yukarıdan boşluk */
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   animation: pulseLogo 2.5s ease-in-out infinite alternate;
 }
-
 
 @keyframes pulseLogo {
   0% {
@@ -61,7 +60,7 @@
   }
 }
 
-/* GENEL GRUP STİLLERİ */
+/* Genel grup stilleri */
 .footer-group {
   display: flex;
   flex-direction: column;
@@ -88,7 +87,7 @@
   color: #dc143c;
 }
 
-/* SOSYAL ALAN (dikey) */
+/* Sosyal ikonlar - dikey */
 .social-icons.vertical {
   display: flex;
   flex-direction: column;
@@ -119,7 +118,7 @@
   margin-top: 30px;
 }
 
-/* RESPONSIVE: TABLET */
+/* Responsive: Tablet */
 @media (max-width: 768px) {
   .footer-wrapper {
     flex-direction: column;
@@ -148,7 +147,7 @@
   }
 }
 
-/* RESPONSIVE: MOBILE */
+/* Responsive: Mobile */
 @media (max-width: 480px) {
   .footer-logo {
     font-size: 2.2rem;

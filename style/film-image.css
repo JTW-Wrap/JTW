@@ -1,30 +1,30 @@
 /* Ana bölüm */
 .main-second-image-section {
-  position: relative; /* Eklendi: .information için konum referansı */
+  position: relative; /* .information için konum referansı */
   max-width: 1200px;
   margin: 120px auto;
   padding: 0 20px;
   font-family: 'Chakra Petch', sans-serif;
   color: white;
-  box-sizing: border-box; /* zaten vardı */
+  box-sizing: border-box;
 }
 
 .image-text-wrapper {
   display: flex;
-  align-items: flex-start; /* daha stabil hizalama */
+  align-items: flex-start; /* stabil hizalama */
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
 }
 
-/* YAZI - SOLDA */
+/* Yazı - Sol taraf */
 .text-column {
-  flex: 1 1 300px; /* Esnek büyür/küçülür minimum 300px */
+  flex: 1 1 300px; /* esnek, minimum 300px */
   max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  user-select: text; /* Değiştirildi: seçilebilir olsun diye */
+  user-select: text; /* metin seçilebilir */
   box-sizing: border-box;
 }
 
@@ -42,7 +42,7 @@
   margin: 0;
   color: #eee;
   line-height: 1.4;
-  user-select: text; /* Değiştirildi: seçilebilir */
+  user-select: text;
 }
 
 /* Bilgi yazısı (position:absolute) */
@@ -61,13 +61,13 @@
   box-sizing: border-box;
 }
 
-/* GÖRSEL/VIDEO - SAĞDA */
+/* Görsel/Video - Sağ taraf */
 .image-card {
   position: relative;
-  flex: 1 1 400px; /* Esnek büyür/küçülür minimum 400px */
+  flex: 1 1 400px; /* esnek, minimum 400px */
   max-width: 600px;
   height: auto;
-  aspect-ratio: 4 / 5; /* Genişlik/yükseklik oranı */
+  aspect-ratio: 4 / 5; /* genişlik/yükseklik oranı */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
@@ -113,7 +113,7 @@
   opacity: 1;
 }
 
-/* Hover yapıldığında video aktif olur */
+/* Hover ile video aktif olur */
 .media-container video {
   z-index: 2;
   opacity: 0;
