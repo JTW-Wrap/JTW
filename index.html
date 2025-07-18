@@ -9,24 +9,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Kendi fontların burada, Google Fonts Kaldırıldı -->
-  <link rel="stylesheet" href="/style/font.css" />
+  <link rel="stylesheet" href="./style/font.css" />
 
   <!-- JavaScript dosyaları defer ile yüklenir -->
-  <script src="/style/main.css" defer></script>
-  <script src="/scripts/script.js" defer></script>
-  <script src="/scripts/language.js" defer></script>
-  <script src="/scripts/location.js" defer></script>
-  <script src="/scripts/switch.js" defer></script>
+  <script src="./scripts/main-video.js" defer></script>
+  <script src="./scripts/script.js" defer></script>
+  <script src="./scripts/language.js" defer></script>
+  <script src="./scripts/location.js" defer></script>
+  <script src="./scripts/switch.js" defer></script>
 
   <!-- Stil dosyaları -->
-  <link rel="stylesheet" href="/style/main.css" />
-  <link rel="stylesheet" href="/style/mainvideo.css" />
-  <link rel="stylesheet" href="/style/mainimage.css" />
-  <link rel="stylesheet" href="/style/mainbutton.css" />
-  <link rel="stylesheet" href="/style/main-animation.css" />
-  <link rel="stylesheet" href="/style/downplace.css" />
-  <link rel="stylesheet" href="/style/information.css" />
-  <link rel="stylesheet" href="/style/main-image-last.css" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <link rel="stylesheet" href="./style/mainvideo.css" />
+  <link rel="stylesheet" href="./style/mainimage.css" />
+  <link rel="stylesheet" href="./style/mainbutton.css" />
+  <link rel="stylesheet" href="./style/main-animation.css" />
+  <link rel="stylesheet" href="./style/downplace.css" />
+  <link rel="stylesheet" href="./style/information.css" />
+  <link rel="stylesheet" href="./style/main-image-last.css" />
 </head>
 <body>
   <!-- NAVBAR -->
@@ -77,7 +77,7 @@
 <!-- Hidden video data section -->
 <div id="video-data" >
   <!-- 1st Video -->
-  <div class="video-item" data-src="../public/video/ppfbody.mp4" data-link="film-protect.html">
+  <div class="video-item" data-src="./public/video/ppfbody.mp4" data-link="film-protect.html">
     <div class="details-container" style="background: transparent;">
       <div class="details-left" style="background: transparent;">
         <strong data-en="Free repairs for first 6 months" data-jp="最初の6ヶ月間無料修理">Free repairs for first 6 months</strong>
@@ -100,7 +100,7 @@
   </div>
 
   <!-- 2nd Video -->
-  <div class="video-item" data-src="../public/video/pastacila2.mp4" data-link="led.html">
+  <div class="video-item" data-src="./public/video/pastacila2.mp4" data-link="led.html">
     <div class="details-container" style="background: transparent;">
       <div class="details-left" style="background: transparent;">
         <strong data-en="Custom Lights & LEDs" data-jp="カスタムライト＆LED">Custom Lights & LEDs</strong>
@@ -123,7 +123,7 @@
   </div>
 
   <!-- 3rd Video -->
-  <div class="video-item" data-src="../public/video/worker.mp4" data-link="car-wash.html">
+  <div class="video-item" data-src="./public/video/worker.mp4" data-link="car-wash.html">
     <div class="details-container" style="background: transparent;">
       <div class="details-left" style="background: transparent;">
         <strong data-en="Steam Cleaning" data-jp="スチームクリーニング">Steam Cleaning</strong>
@@ -146,7 +146,7 @@
   </div>
 
   <!-- 4th Video -->
-  <div class="video-item" data-src="../public/video/ppfbody12.mp4" data-link="repair.html">
+  <div class="video-item" data-src="./public/video/ppfbody12.mp4" data-link="repair.html">
     <div class="details-container" style="background: transparent;">
       <div class="details-left" style="background: transparent;">
         <strong data-en="Precision Repairs" data-jp="精密修理">Precision Repairs</strong>
@@ -177,9 +177,9 @@
   <section class="fullscreen-image-section">
     <a href="film-protect.html" class="clickable-area" tabindex="0" aria-label="Go to Cars page">
       <div class="media-container">
-        <img src="../public/image/carlogo.jpeg" alt="Background Image" />
+        <img src="./public/image/carlogo.jpeg" alt="Background Image" />
         <video class="hover-video" muted autoplay loop playsinline>
-          <source src="../public/video/mainpage.4.mov" type="video/mp4" />
+          <source src="./public/video/mainpage.4.mov" type="video/mp4" />
         </video>
 
         <h1 class="main-title" data-en="JTW FILMS" data-jp="JTWフィルム">JTW FILMS</h1>
@@ -275,8 +275,8 @@
     <!-- Sağda resim + hover ile değişen ikinci resim -->
     <div class="information-card scroll-animate">
       <div class="media-container">
-        <img src="../public/image/nkoda.png" alt="Featured Car" class="main-image" />
-        <img src="../public/image/jtwlogo.jpeg" alt="Hover Car" class="hover-image" />
+        <img src="./public/image/nkoda.png" alt="Featured Car" class="main-image" />
+        <img src="./public/image/jtwlogo.jpeg" alt="Hover Car" class="hover-image" />
       </div>
     </div>
     
@@ -290,7 +290,7 @@
     <div class="image-card">
       <a href="Led.html" class="clickable-area" tabindex="0" aria-label="Go to Led Custom page">
         <div class="media-container">
-          <img src="../public/image/modfy2.jpeg" alt="Example 1" />
+          <img src="./public/image/modfy2.jpeg" alt="Example 1" />
           <video class="hover-video" muted autoplay loop playsinline>
             <source src="../public/video/modfy.mp4" type="video/mp4" />
           </video>
@@ -305,9 +305,9 @@
     <div class="image-card">
       <a href="gallery.html" class="clickable-area" tabindex="0" aria-label="Go to Gallery page">
         <div class="media-container">
-          <img src="../public/image/film-sp.jpg" alt="Example 2" />
+          <img src="./public/image/film-sp.jpg" alt="Example 2" />
           <video class="hover-video" muted autoplay loop playsinline>
-            <source src="../public/video/ppfbody.mp4" type="video/mp4" />
+            <source src="./public/video/ppfbody.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="text-overlay">
@@ -322,9 +322,9 @@
     <div class="image-card">
       <a href="car-wash.html" class="clickable-area" tabindex="0" aria-label="Go to Car Wash page">
         <div class="media-container">
-          <img src="../public/image/film-pc.jpg" alt="Example 3" />
+          <img src="./public/image/film-pc.jpg" alt="Example 3" />
           <video class="hover-video" muted autoplay loop playsinline>
-            <source src="../public/video/carwashblack2.mp4" type="video/mp4" />
+            <source src="./public/video/carwashblack2.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="text-overlay">
@@ -337,9 +337,9 @@
     <div class="image-card">
       <a href="repair.html" class="clickable-area" tabindex="0" aria-label="Go to Repair page">
         <div class="media-container">
-          <img src="../public/image/ppfwindow.jpeg" alt="Example 4" />
+          <img src="./public/image/ppfwindow.jpeg" alt="Example 4" />
           <video class="hover-video" muted autoplay loop playsinline>
-            <source src="../public/video/repairvideo.mp4" type="video/mp4" />
+            <source src="./public/video/repairvideo.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="text-overlay">
