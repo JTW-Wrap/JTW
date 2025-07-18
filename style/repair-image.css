@@ -6,7 +6,7 @@
 .repair-highlight {
   position: relative;
   width: 100%;
-  height: 70vh;
+  min-height: 70vh;
   overflow: hidden;
   font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   padding: 30px 5vw 60px;
@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
   filter: brightness(0.5);
   display: block;
 }
@@ -39,8 +39,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
   z-index: 2;
+  text-align: center;
 }
 
 /* ANİMASYON */
@@ -48,13 +50,13 @@
 .animate-points li,
 .animate-description {
   opacity: 0;
-  transform: translateX(-40px);
+  transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .animate-visible .animate-title {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
   transition-delay: 0.2s;
 }
 
@@ -66,7 +68,7 @@
 .animate-visible .animate-points li,
 .animate-visible .animate-description {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .animate-visible .animate-description {
@@ -96,9 +98,10 @@
 
 .animate-description {
   font-size: clamp(1rem, 3.5vw, 1.5rem);
-  max-width: 600px;
+  max-width: 700px;
   line-height: 1.6;
   font-weight: 300;
+  padding: 0 1rem;
 }
 
 /* ADVANTAGE BÖLÜMÜ */
@@ -115,7 +118,7 @@
 }
 
 .advantage-image {
-  flex: 1 1 500px;
+  flex: 1 1 400px;
   max-width: 600px;
   width: 100%;
   overflow: hidden;
@@ -124,7 +127,7 @@
 
 .advantage-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
@@ -140,14 +143,15 @@
 .advantage-text {
   flex: 1 1 300px;
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateY(40px);
   transition: all 0.8s ease;
   min-width: 280px;
+  text-align: left;
 }
 
 .advantage-section.visible .advantage-text {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .advantage-title {
@@ -169,14 +173,14 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateY(40px);
   transition: all 0.6s ease;
 }
 
-.advantage-section.visible .advantage-list li:nth-child(1) { opacity: 1; transform: translateX(0); transition-delay: 0.2s; }
-.advantage-section.visible .advantage-list li:nth-child(2) { opacity: 1; transform: translateX(0); transition-delay: 0.4s; }
-.advantage-section.visible .advantage-list li:nth-child(3) { opacity: 1; transform: translateX(0); transition-delay: 0.6s; }
-.advantage-section.visible .advantage-list li:nth-child(4) { opacity: 1; transform: translateX(0); transition-delay: 0.8s; }
+.advantage-section.visible .advantage-list li:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.advantage-section.visible .advantage-list li:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.advantage-section.visible .advantage-list li:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.advantage-section.visible .advantage-list li:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
 
 .advantage-list li i {
   color: var(--red);
@@ -187,7 +191,7 @@
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .repair-highlight {
-    height: auto;
+    min-height: auto;
     padding: 20px 4vw;
   }
 
@@ -200,10 +204,10 @@
   .advantage-section {
     flex-direction: column;
     padding: 5vh 4vw;
+    text-align: center;
   }
 
   .advantage-text {
-    text-align: center;
     transform: none !important;
     opacity: 1 !important;
   }

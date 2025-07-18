@@ -1,45 +1,38 @@
 /* Genel box-sizing tüm elemanlarda */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Ana yazı tipi ve renk */
 body {
   font-family: 'Chakra Petch', sans-serif;
   color: #fff;
-  background: none; /* Arka plan ekledim, isteğe göre kaldırabilirsin */
+  background: none;
   margin: 0;
   padding: 0;
 }
 
-/* Başlık */
 .category-title {
   text-align: center;
-  margin: 2rem 3.75rem 1rem; /* 20px 60px 10px */
+  margin: 2rem 1rem 1rem;
 }
 
 .category-title h2 {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2rem);
-  font-weight: 500;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 600;
   color: #ff0015;
   letter-spacing: 1px;
-  margin: 4.375rem 0; /* 70px 0 */
+  margin: 3rem 0 1.5rem;
 }
 
-/* ========================== 
-   Kategori Butonları 
-========================== */
 .category-buttons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  font-family: 'Orbitron', sans-serif;
-  margin: 2.5rem 0 0; /* 40px 0 0 */
-  user-select: none;
+  gap: 1rem;
   flex-wrap: wrap;
+  font-family: 'Orbitron', sans-serif;
+  margin: 2rem 0;
+  user-select: none;
 }
 
 .category-btn {
@@ -48,12 +41,11 @@ body {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 500;
   color: #fff;
-  padding: 0.625rem 0.9375rem; /* 10px 15px */
+  padding: 0.5rem 1rem;
   border-bottom: 3px solid transparent;
   cursor: pointer;
   transition: color 0.3s ease, border-color 0.3s ease;
   white-space: nowrap;
-  font-family: inherit;
 }
 
 .category-btn:hover,
@@ -65,26 +57,17 @@ body {
 .category-btn.active {
   color: #ff0015;
   border-bottom: 3px solid #ff0015;
-  cursor: default;
   pointer-events: none;
 }
 
-/* ==========================
-   Kategori İçerik Container
-========================== */
 .category-content-container {
   width: 100%;
-  margin: 1.25rem auto 7.5rem; /* 20px auto 120px */
-  padding: 0;
-  font-family: inherit;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 10px;
+  margin: 1rem auto 6rem;
+  padding: 0 1rem;
   position: relative;
   overflow: visible;
 }
 
-/* Aktif içerik */
 .category-content {
   opacity: 0;
   transform: translateY(40px);
@@ -99,30 +82,24 @@ body {
   pointer-events: auto;
 }
 
-/* Flex wrapper */
 .image-text-wrapper {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: clamp(1.5rem, 3vw, 2.5rem); /* Esnek gap */
-  padding: 2.5rem 0; /* 40px 0 */
   flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 0;
 }
 
-/* Yazı alanı */
 .text-column {
-  flex: 1 1 40%;
-  max-width: 40%;
-  min-width: 280px;
-  padding-left: 1.25rem; /* 20px */
+  flex: 1 1 300px;
+  max-width: 600px;
+  text-align: left;
+  font-family: 'Orbitron', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.625rem; /* 10px */
-  text-align: left;
-  font-family: 'Orbitron', sans-serif;
+  gap: 1rem;
   opacity: 0;
   animation: fadeInText 1s ease forwards;
   animation-delay: 0.5s;
@@ -130,17 +107,15 @@ body {
 
 .text-column h2 {
   font-weight: 700;
-  font-size: clamp(1.6rem, 4vw, 1.9rem);
-  margin: 1.875rem 0 0.625rem; /* 30px 0 10px */
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin: 0.5rem 0;
   color: #ff0015;
-  letter-spacing: 1px;
 }
 
 .text-column p {
   font-family: 'Chakra Petch', sans-serif;
-  margin: 0;
-  font-size: clamp(1.2rem, 3vw, 1.4rem);
-  line-height: 1.8;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.6;
   color: #ddd;
 }
 
@@ -154,21 +129,18 @@ body {
   color: #ff0015;
 }
 
-/* Görsel alanı */
 .image-card {
-  flex: 1 1 55%;
-  max-width: 55%;
-  height: 700px;
+  flex: 1 1 320px;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 4/3;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(255, 0, 21, 0.6);
-  user-select: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: fadeInImage 0.9s ease forwards;
-  min-width: 320px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -178,7 +150,6 @@ body {
   z-index: 10;
 }
 
-/* Animasyonlar */
 @keyframes fadeInImage {
   from {
     opacity: 0;
@@ -201,7 +172,6 @@ body {
   }
 }
 
-/* Medya alanı */
 .media-container {
   position: relative;
   width: 100%;
@@ -217,24 +187,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
   object-fit: cover;
+  border-radius: 16px;
+  background: black;
   transition: opacity 0.4s ease;
   pointer-events: none;
-  user-select: none;
-  background: black;
-  backface-visibility: hidden;
-  will-change: opacity;
 }
 
 .media-container img {
-  opacity: 1;
   z-index: 1;
+  opacity: 1;
 }
 
 .media-container video {
-  opacity: 0;
   z-index: 2;
+  opacity: 0;
 }
 
 .image-card:hover .media-container video {
@@ -245,47 +212,19 @@ body {
   opacity: 0;
 }
 
-/* Responsive */
-
-/* 1024px altı: tablet ve büyük mobil */
 @media (max-width: 1024px) {
-  .text-column h2 {
-    font-size: clamp(1.4rem, 3vw, 1.7rem);
-  }
-  .text-column p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-  }
-  .image-card {
-    height: 480px;
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-  .text-column {
-    max-width: 100%;
-    flex: 1 1 100%;
-    padding-left: 0;
-    text-align: center;
-    align-items: center;
-  }
-  .image-text-wrapper {
-    gap: 1.25rem;
-  }
-}
-
-/* 768px altı: tablet, büyük telefon */
-@media (max-width: 768px) {
   .image-text-wrapper {
     flex-direction: column;
-    padding: 0.75rem;
+    align-items: center;
   }
-  .text-column {
+  .text-column,
+  .image-card {
     max-width: 100%;
-    padding: 0 1rem;
+    flex: 1 1 100%;
   }
   .image-card {
     height: auto;
-    aspect-ratio: 4 / 3;
-    margin: 0 auto;
+    aspect-ratio: 16/9;
   }
   .media-container img,
   .media-container video {
@@ -293,13 +232,27 @@ body {
     width: 100%;
     height: auto;
   }
+  .text-column {
+    text-align: center;
+    align-items: center;
+  }
 }
 
-/* 480px altı: küçük telefon */
+@media (max-width: 768px) {
+  .text-column h2 {
+    font-size: 1.5rem;
+  }
+  .text-column p {
+    font-size: 1.1rem;
+  }
+  .image-card {
+    aspect-ratio: 16/10;
+  }
+}
+
 @media (max-width: 480px) {
   .text-column h2 {
     font-size: 1.3rem;
-    margin: 0.75rem 0 0.375rem;
   }
   .text-column p {
     font-size: 1rem;

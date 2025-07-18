@@ -1,97 +1,93 @@
-/* =============================
-   ANA BÖLÜM - İKİNCİ GÖRSEL & METİN
-============================= */
 .main-second-image-section {
   max-width: 1200px;
   margin: 30px auto;
   padding: 0 20px;
   font-family: 'Chakra Petch', sans-serif;
   color: white;
+  box-sizing: border-box; /* kesinlikle ekle */
 }
 
-/* Sol metin ve sağ görsel alanı */
+/* Flex container */
 .image-text-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* tam üst hizalama, yazı alt kısmı kırılırsa sorun olmaz */
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
 }
 
-/* Yazı sütunu (sol) */
+/* Sol metin */
 .text-column {
-  flex: 1 1 320px; /* minimum 320px, esnek */
-  max-width: 700px;
+  flex: 1 1 320px;
+  max-width: 600px; /* max genişliği biraz daralttım yazının rahat sığması için */
   display: flex;
   flex-direction: column;
   gap: 15px;
-  user-select: none;
+  user-select: text; /* seçilebilir yap */
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* kelime taşmasını önler */
+  word-break: break-word;
+  min-width: 280px;
 }
 
+/* Başlık */
 .text-column h3 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   margin: 0;
   color: white;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
+/* Paragraf */
 .text-column p {
   font-style: italic;
   font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   margin: 0;
   color: #eee;
-  line-height: 1.4;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  user-select: text;
 }
 
-/* Görsel kutusu (sağ) */
+/* Sağ görsel kutusu */
 .information-card {
   position: relative;
-  flex: 1 1 320px; /* minimum 320px, esnek */
-  max-width: 800px;
-  aspect-ratio: 4 / 5; /* oran sabit */
+  flex: 1 1 320px;
+  max-width: 600px; /* max genişlik sabit */
+  aspect-ratio: 4 / 5;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   user-select: none;
-  background-color: #111; /* boşluklar için */
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Hover */
 .information-card:hover {
   transform: scale(1.03);
   box-shadow: 0 20px 50px rgb(117 8 8);
   z-index: 5;
 }
 
-/* Hover ile görsel değiştirme */
-.information-card:hover .media-container img.hover-image {
-  opacity: 1;
-}
-
-.information-card:hover .media-container img.main-image {
-  opacity: 0;
-}
-
-/* Başlık (opsiyonel) */
-.information-card .contact-title {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Media container (resim geçişi için) */
+/* Resimler (container içinde) */
 .media-container {
   position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Ana ve hover resimler */
@@ -108,19 +104,28 @@
   user-select: none;
 }
 
-/* İlk resim (görünen) */
+/* Başta ana resim görünür */
 .media-container img.main-image {
   z-index: 1;
   opacity: 1;
 }
 
-/* Hover resim (başta gizli) */
+/* Hover resmi başta gizli */
 .media-container img.hover-image {
   z-index: 2;
   opacity: 0;
 }
 
-/* Animasyonlu görünürlük */
+/* Hover’da ana resim kaybolur, hover resim görünür */
+.information-card:hover .media-container img.main-image {
+  opacity: 0;
+}
+
+.information-card:hover .media-container img.hover-image {
+  opacity: 1;
+}
+
+/* Animasyonlar (opsiyonel) */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -128,17 +133,14 @@
   pointer-events: none;
 }
 
-/* Sol metin için başlangıç animasyonu (soldan kayma) */
 .text-column.scroll-animate {
   transform: translateX(-40px);
 }
 
-/* Sağ görsel için başlangıç animasyonu (sağdan kayma) */
 .information-card.scroll-animate {
   transform: translateX(40px);
 }
 
-/* Görünürken animasyonlar */
 .scroll-visible {
   opacity: 1;
   transform: translateX(0) translateY(0);
@@ -147,18 +149,16 @@
   transition-delay: 0.3s;
 }
 
-/* Animasyon gecikmeleri */
 .text-column.scroll-visible {
-  transition-delay: 0.3s; /* Metin önce */
+  transition-delay: 0.3s;
 }
 
 .information-card.scroll-visible {
-  transition-delay: 0.6s; /* Görsel sonra */
+  transition-delay: 0.6s;
 }
 
-/* =============================
-   RESPONSIVE
-============================= */
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1024px) {
   .text-column h3 {
     font-size: clamp(1.3rem, 2vw, 2rem);
@@ -178,22 +178,28 @@
     flex-direction: column;
     gap: 20px;
   }
+
   .text-column {
     max-width: 100%;
     min-width: auto;
+    padding: 0 10px;
   }
+
   .text-column h3 {
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   }
+
   .text-column p {
     font-size: clamp(0.8rem, 2vw, 0.95rem);
   }
+
   .information-card {
     max-width: 100%;
     width: 100%;
     height: auto;
     aspect-ratio: auto;
   }
+
   .media-container img {
     position: static;
     width: 100%;
@@ -206,9 +212,11 @@
   .text-column h3 {
     font-size: clamp(1rem, 4vw, 1.5rem);
   }
+
   .text-column p {
     font-size: clamp(0.75rem, 3vw, 0.9rem);
   }
+
   .information-card {
     height: auto;
   }
