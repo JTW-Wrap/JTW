@@ -37,6 +37,7 @@ body {
 
 .category-btn {
   background: none;
+  font-family: 'Orbitron', sans-serif; /* Başlıklar için farklı font */
   border: none;
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 500;
@@ -62,8 +63,7 @@ body {
 
 .category-content-container {
   width: 100%;
-  margin: 1rem auto 6rem;
-  padding: 0 1rem;
+
   position: relative;
   overflow: visible;
 }
@@ -107,6 +107,8 @@ body {
 
 .text-column h2 {
   font-weight: 700;
+  font-family: 'Orbitron', sans-serif; /* Başlıklar için farklı font */
+
   font-size: clamp(1.6rem, 4vw, 2rem);
   margin: 0.5rem 0;
   color: #ff0015;

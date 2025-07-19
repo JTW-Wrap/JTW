@@ -1,249 +1,236 @@
 /* ===============================
    1. WRAP / ITASHA ÖZEL TASARIM ALANI
+   Yapı: Solda yazı - Sağda görsel/video
    =============================== */
-.custom-image-text-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding-top: 120px;
-  margin: 0 auto;
-  max-width: 1400px; /* biraz daha genişlettim */
-  width: 100%;
-  font-family: 'Chakra Petch', sans-serif;
-  color: white;
-  box-sizing: border-box;
-}
-
-/* Text column */
-.custom-text-column {
-  flex: 1 1 30%;
-  max-width: 30%;
-  min-width: 200px; /* mobilde düşürebilirsin */
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left;
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1.5s ease;
-}
-
-/* Görünürlük animasyonu */
-.extra-section.animate-in .custom-text-column {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
-}
-
-/* Başlık */
-.custom-text-column h2 {
-  font-weight: 700;
-  font-size: clamp(1.5rem, 2vw, 1.9rem);
-  margin: 30px 0 10px 0;
-  color: #ff0015;
-  letter-spacing: 1px;
-}
-
-/* Paragraf */
-.custom-text-column p {
-  margin: 0;
-  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-  line-height: 1.9;
-  color: #ddd;
-}
-
-/* Vurgu */
-.custom-text-column strong {
-  color: #fff;
-  font-weight: 700;
-}
-
-/* İkon */
-.custom-text-column i {
-  margin-right: 6px;
-  color: #ff0015;
-}
-
-/* Görsel kartı */
-.custom-image-card {
-  flex: 1 1 67%;
-  max-width: 70%;
-  min-width: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 32px rgba(255, 0, 21, 0.6);
-  user-select: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 1.5s ease;
-  aspect-ratio: 16 / 9; /* Bu çok önemli */
-}
-
-/* Görünürlük animasyonu */
-.extra-section.animate-in .custom-image-card {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Medya kapsayıcı */
-.custom-media-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-/* Görsel ve video */
-.custom-media-container img,
-.custom-media-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-  transition: opacity 0.4s ease;
-  background: black;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-  backface-visibility: hidden;
-  will-change: opacity;
-}
-
-/* Hover davranışı */
-.custom-media-container img {
-  opacity: 1;
-  z-index: 1;
-}
-
-.custom-media-container video {
-  opacity: 0;
-  z-index: 2;
-  pointer-events: auto;
-  user-select: auto;
-}
-
-.custom-image-card:hover .custom-media-container video {
-  opacity: 1;
-}
-
-.custom-image-card:hover .custom-media-container img {
-  opacity: 0;
-}
-
-/* ===============================
-   3. BASIC INTRO
-   =============================== */
-.basic-intro {
-  max-width: 1400px;
-  margin: 40px auto;
-  padding: 30px 40px;
-  font-family: 'Chakra Petch', sans-serif;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 2px solid #ff0015;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.basic-title {
-  color: #ff0015;
-  font-weight: 700;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-bottom: 25px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.basic-paragraph {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  line-height: 1.8;
-  margin-bottom: 20px;
-  max-width: 1050px;
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: 0.3px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* ===============================
-   4. RESPONSIVE
-   =============================== */
-@media (max-width: 1024px) {
+   .custom-image-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding-top: 120px;
+    padding-bottom: 80px;  /* istediğin kadar boşluk */
+    flex-wrap: wrap;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
   .custom-text-column {
-    max-width: 100%;
-    flex: 1 1 100%;
-    padding-left: 10px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .custom-image-card {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .custom-image-text-wrapper {
-    padding-top: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .custom-image-text-wrapper {
+    flex: 1 1 45%;
+    max-width: 45%;
+    padding-left: 20px;
+    display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 12px 20px;
+    gap: 10px;
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.5s ease;
+    min-width: 280px; /* Küçük ekranlarda minimum genişlik */
   }
-
-  .custom-text-column,
+  
+  /* Scroll ile görünür olduğunda animasyon başlasın */
+  .extra-section.animate-in .custom-text-column {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+  }
+  
+  .custom-text-column h2 {
+    font-weight: 700;
+    font-size: 1.9rem;
+    margin: 30px 0 10px 0;
+    color: #ff0015;
+    letter-spacing: 1px;
+  }
+  
+  .custom-text-column p {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.9;
+    color: #ddd;
+  }
+  
+  .custom-text-column strong {
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .custom-text-column i {
+    margin-right: 6px;
+    color: #ff0015;
+  }
+  
   .custom-image-card {
-    max-width: 100%;
+    flex: 1 1 50%;
+    max-width: 50%;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(255, 0, 21, 0.6);
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 1.5s ease;
+    min-width: 320px; /* Küçük ekranlarda minimum genişlik */
   }
-
-  .custom-image-card {
-    aspect-ratio: 16 / 9;
+  
+  /* Scroll ile görünür olduğunda animasyon başlasın */
+  .extra-section.animate-in .custom-image-card {
+    opacity: 1;
+    transform: scale(1);
   }
-
+  
   .custom-media-container {
-    height: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
   }
-
+  
   .custom-media-container img,
   .custom-media-container video {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+    background: black;
+    display: block;
+    pointer-events: none;
+    user-select: none;
   }
-}
-
-@media (max-width: 480px) {
-  .custom-text-column h2 {
-    font-size: 1.5rem;
+  
+  .custom-media-container img {
+    opacity: 1;
+    z-index: 1;
   }
-
-  .custom-text-column p {
-    font-size: 1.1rem;
+  
+  .custom-media-container video {
+    opacity: 0;
+    z-index: 2;
+    pointer-events: auto;
+    user-select: auto;
   }
-
+  
+  /* Hover ile video göster */
+  .custom-image-card:hover .custom-media-container video {
+    opacity: 1;
+  }
+  .custom-image-card:hover .custom-media-container img {
+    opacity: 0;
+  }
+  
+  /* ===============================
+     3. BASIC INTRO / EN GENEL FİLM TANITIM BLOĞU
+     =============================== */
+  .basic-intro {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    font-family: 'Chakra Petch', sans-serif;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff0015;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
   .basic-title {
-    font-size: 2rem;
+    color: #ff0015;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
-
+  
   .basic-paragraph {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
-}
+  
+  /* ===============================
+     4. RESPONSIVE (Mobil uyum)
+     =============================== */
+  @media (max-width: 1024px) {
+    .custom-text-column {
+      max-width: 100%;
+      flex: 1 1 100%;
+      padding-left: 10px;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .custom-image-card {
+      max-width: 100%;
+      flex: 1 1 100%;
+      height: 400px;
+      min-width: unset;
+    }
+  
+    .custom-image-text-wrapper {
+      padding-top: 60px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .custom-image-text-wrapper {
+      flex-direction: column;
+      gap: 20px;
+      padding: 12px 20px;
+    }
+  
+    .custom-text-column,
+    .custom-image-card {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .custom-media-container img,
+    .custom-media-container video {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .custom-text-column h2 {
+      font-size: 1.5rem;
+    }
+  
+    .custom-text-column p {
+      font-size: 1.1rem;
+    }
+  
+    .basic-title {
+      font-size: 2rem;
+    }
+  
+    .basic-paragraph {
+      font-size: 1.1rem;
+    }
+  }
+  
