@@ -1,33 +1,39 @@
+/* Genel bölüm - kapsayıcı */
 .main-second-image-section {
   max-width: 1200px;
   margin: 30px auto;
   padding: 0 20px;
   font-family: 'Chakra Petch', sans-serif;
   color: white;
-  box-sizing: border-box; /* kesinlikle ekle */
+  box-sizing: border-box; /* önemli */
 }
 
 /* Flex container */
 .image-text-wrapper {
   display: flex;
-  align-items: flex-start; /* tam üst hizalama, yazı alt kısmı kırılırsa sorun olmaz */
+  align-items: flex-start; /* üst hizalama */
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+  padding-left: 10px;  /* Kenardan taşmayı engelle */
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 
-/* Sol metin */
+/* Sol metin sütunu */
 .text-column {
   flex: 1 1 320px;
-  max-width: 600px; /* max genişliği biraz daralttım yazının rahat sığması için */
+  max-width: 600px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  user-select: text; /* seçilebilir yap */
+  user-select: text;
   box-sizing: border-box;
-  overflow-wrap: break-word; /* kelime taşmasını önler */
+  overflow-wrap: break-word;
   word-break: break-word;
-  min-width: 280px;
+  padding-left: 15px;  /* soldan taşmayı engelle */
+  padding-right: 15px;
 }
 
 /* Başlık */
@@ -57,7 +63,7 @@
 .information-card {
   position: relative;
   flex: 1 1 320px;
-  max-width: 600px; /* max genişlik sabit */
+  max-width: 600px;
   aspect-ratio: 4 / 5;
   border-radius: 16px;
   overflow: hidden;
@@ -71,14 +77,14 @@
   align-items: center;
 }
 
-/* Hover */
+/* Hover efekti */
 .information-card:hover {
   transform: scale(1.03);
   box-shadow: 0 20px 50px rgb(117 8 8);
   z-index: 5;
 }
 
-/* Resimler (container içinde) */
+/* Resimler için container */
 .media-container {
   position: relative;
   width: 100%;
@@ -116,7 +122,7 @@
   opacity: 0;
 }
 
-/* Hover’da ana resim kaybolur, hover resim görünür */
+/* Hover'da ana resim kaybolur, hover resim görünür */
 .information-card:hover .media-container img.main-image {
   opacity: 0;
 }
@@ -159,6 +165,7 @@
 
 /* ===== RESPONSIVE ===== */
 
+/* Tablet ve küçük masaüstü */
 @media (max-width: 1024px) {
   .text-column h3 {
     font-size: clamp(1.3rem, 2vw, 2rem);
@@ -166,23 +173,28 @@
   .text-column p {
     font-size: clamp(0.85rem, 1.5vw, 1rem);
   }
+
   .information-card {
     max-width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 3; /* biraz daha yatay, mobil uyumlu */
     height: auto;
   }
 }
 
+/* Mobil telefonlar */
 @media (max-width: 768px) {
   .image-text-wrapper {
     flex-direction: column;
     gap: 20px;
+    padding-left: 10px;  /* kenar boşluk */
+    padding-right: 10px;
   }
 
   .text-column {
     max-width: 100%;
     min-width: auto;
-    padding: 0 10px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .text-column h3 {
@@ -197,7 +209,7 @@
     max-width: 100%;
     width: 100%;
     height: auto;
-    aspect-ratio: auto;
+    aspect-ratio: auto; /* mobilde esnek */
   }
 
   .media-container img {
@@ -205,9 +217,11 @@
     width: 100%;
     height: auto;
     border-radius: 16px;
+    object-fit: contain; /* mobilde bozulma engelle */
   }
 }
 
+/* Çok küçük ekranlar */
 @media (max-width: 480px) {
   .text-column h3 {
     font-size: clamp(1rem, 4vw, 1.5rem);

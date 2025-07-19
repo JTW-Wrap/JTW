@@ -30,7 +30,7 @@
   display: block;
 }
 
-/* Overlay'i tam ortaya alıyoruz */
+/* Overlay */
 .repair-overlay {
   position: absolute;
   top: 50%;
@@ -105,7 +105,7 @@
   margin: 0 auto;
 }
 
-/* ADVANTAGE BÖLÜMÜ (değişmedi) */
+/* ADVANTAGE BÖLÜMÜ */
 .advantage-section {
   display: flex;
   flex-wrap: wrap;
@@ -189,11 +189,12 @@
   font-size: 1.3rem;
 }
 
-/* RESPONSIVE (kısmı değişmedi) */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .repair-highlight {
-    padding: 20px 4vw;
+    flex-direction: column;
     height: auto;
+    padding: 5vh 4vw;
   }
 
   .repair-overlay {
@@ -201,17 +202,20 @@
     top: auto;
     left: auto;
     transform: none;
+    max-width: 100%;
+    width: 100%;
   }
 
   .advantage-section {
     flex-direction: column;
-    padding: 5vh 4vw;
     text-align: center;
+    padding: 5vh 4vw;
   }
 
   .advantage-text {
     transform: none !important;
     opacity: 1 !important;
+    width: 100%;
   }
 
   .advantage-image {
@@ -221,11 +225,11 @@
 
 @media (max-width: 600px) {
   .repair-highlight {
-    padding: 15px 2vw;
+    padding: 4vh 3vw;
   }
 
   .repair-overlay {
-    padding: 0 2vw;
+    padding: 0;
   }
 
   .animate-title {
@@ -240,12 +244,9 @@
     font-size: 1rem;
   }
 
-  .advantage-section {
-    padding: 4vh 3vw;
-  }
-
   .advantage-list li {
     justify-content: center;
     text-align: center;
+    font-size: 1rem;
   }
 }
