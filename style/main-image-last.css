@@ -21,13 +21,13 @@
 }
 
 /* =============================
-   GÖRSEL SIRALAMA
+   GÖRSEL SIRALAMA - 3 GÖRSEL YAN YANA
 ============================= */
 .image-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Tek satırda 3 görsel */
   justify-content: center;
-  gap: 50px; /* satır ve sütun boşlukları */
+  gap: 30px; /* Görseller arası boşluk */
   margin-bottom: 50px;
   padding: 0 5vw;
   box-sizing: border-box;
@@ -35,9 +35,9 @@
 
 /* Görsel Kart */
 .image-card {
-  flex: 1 1 calc(50% - 30px);
-  max-width: calc(50% - 30px);
-  aspect-ratio: 16 / 10;
+  flex: 0 0 auto;           /* Flex büyümesini kapatıp sabit genişlik veriyoruz */
+  width: 470px;             /* İstediğin genişlik */
+  height: 325px;            /* İstediğin yükseklik */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
@@ -50,6 +50,7 @@
   opacity: 0;
   transform: translateY(40px);
 }
+
 
 .image-card.scroll-visible {
   opacity: 1;
@@ -162,6 +163,12 @@
 }
 
 @media (max-width: 768px) {
+  .image-row {
+    flex-wrap: wrap;
+    flex-direction: column; /* Alt alta */
+    gap: 20px;
+  }
+
   .image-card {
     flex: 1 1 100%;
     max-width: 100%;

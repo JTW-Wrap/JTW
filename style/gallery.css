@@ -1,0 +1,231 @@
+/* Font-face tanımları (font.css'e ekle) */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../font/orbitron.woff2') format('woff2'),
+       url('../font/orbitron.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('../font/chakra.woff2') format('woff2'),
+       url('../font/chakra.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Genel body fontu */
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 0;
+  background-color: none;
+  color: #fff;
+}
+
+/* Navbar logosu */
+#center-logo {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* HEADER ve Başlık Ayarı - navbar ile arasında boşluk */
+header {
+  margin-top: 80px;
+  padding: 0 5vw 40px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff3333;
+  margin: 0;
+  padding-bottom: 20px;
+  display: block;
+}
+
+/* Galeri bölümü */
+.gallery-section {
+  padding: 0 5vw 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: 'MyCustomFont', 'Segoe UI', sans-serif;
+}
+
+/* Her bir galeri öğesi */
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
+}
+
+/* Tercihe göre ters yön */
+.gallery-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Resim sarmalayıcısı ve animasyon başlangıç durumu */
+.image-wrapper {
+  position: relative;
+  width: 870px;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 16px;
+
+  /* Başlangıçta görünmez ve hafif aşağı kaydırılmış */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Görsel animasyonu tetiklendiğinde */
+.image-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Resimlerin stili */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 16px;
+  transition: opacity 0.5s ease;
+}
+
+.image-wrapper img.before {
+  z-index: 1;
+  opacity: 1;
+}
+
+.image-wrapper img.after {
+  z-index: 2;
+  opacity: 0;
+}
+
+.image-wrapper:hover img.after {
+  opacity: 1;
+}
+
+.image-wrapper:hover img.before {
+  opacity: 0;
+}
+
+/* Metin bloğu başlangıçta gizli ve sağdan hafif kaydırılmış */
+.text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Yazı animasyonu tetiklendiğinde */
+.text.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* reverse sınıfı için yazının ters yönde başlangıç konumu */
+.gallery-item.reverse .text {
+  transform: translateX(-40px);
+}
+
+.gallery-item.reverse .text.visible {
+  transform: translateX(0);
+}
+
+/* Başlıklar */
+.text-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff3333;
+}
+
+.text-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Responsive Tasarım */
+
+/* Tablet ve küçük ekranlar */
+@media (max-width: 900px) {
+  .gallery-item {
+    gap: 40px;
+  }
+
+  .image-wrapper {
+    max-width: 100%;
+    aspect-ratio: auto;
+    height: auto;
+    position: relative;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+
+  .image-wrapper img {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .text {
+    max-width: 100%;
+    min-width: auto;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition: none !important;
+    padding: 0 10px;
+  }
+}
+
+/* Mobil (telefon) */
+@media (max-width: 600px) {
+  header {
+    margin-top: 60px;
+    padding: 0 3vw 30px;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem;
+    padding-bottom: 15px;
+  }
+
+  .gallery-item {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .text-title {
+    font-size: 1.3rem;
+  }
+
+  .text-content {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .image-wrapper {
+    max-width: 100%;
+    aspect-ratio: auto;
+  }
+}
