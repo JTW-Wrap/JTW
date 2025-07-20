@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   color: white;
-  background-color: none; /* Siyah arka plan için düzeltildi */
+  background-color: none; /* Burada none yerine black yapıldı */
 }
 
 /* REPAIR HIGHLIGHT BÖLÜMÜ */
@@ -56,6 +56,7 @@ body {
   width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
+  /* position absolute kalacak, ama mobilde override edilecek */
 }
 
 .animate-title,
@@ -233,6 +234,7 @@ body {
     padding: 5vh 4vw;
   }
 
+  /* Mobil ve tabletde repair-overlay pozisyonu relative yapıldı */
   .repair-overlay {
     position: relative !important;
     top: auto !important;
@@ -287,5 +289,14 @@ body {
     justify-content: center;
     text-align: center;
     font-size: 1rem;
+  }
+
+  /* Mobilde animasyon gizliliğini kaldır */
+  .animate-title,
+  .animate-points li,
+  .animate-description {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
