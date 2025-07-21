@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-family: 'Chakra Petch', 'Segoe UI', sans-serif;
   color: white;
-  background-color:none; /* Arka plan siyah olabilir */
+  background-color: black;
 }
 
 /* --- REPAIR HIGHLIGHT BÖLÜMÜ --- */
@@ -51,7 +51,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index:999;
+  z-index: 999;
   color: white;
   text-align: center;
   padding: 20px 2vw;
@@ -232,6 +232,7 @@ body {
     width: 100% !important;
     padding: 10px 4vw !important;
     text-align: center;
+    z-index: 2 !important;
   }
 
   .advantage-section {
