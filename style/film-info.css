@@ -109,7 +109,7 @@
     border-radius: 16px;
     object-fit: cover;
     transition: opacity 0.4s ease;
-    background: black;
+    background: none;
     display: block;
     pointer-events: none;
     user-select: none;
@@ -144,7 +144,7 @@
     padding: 30px 40px;
     font-family: 'Chakra Petch', sans-serif;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color:none;
     border: 2px solid #ff0015;
     border-radius: 12px;
     text-align: center;

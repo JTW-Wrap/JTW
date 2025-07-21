@@ -275,11 +275,12 @@ html, body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .repair-highlight {
-    margin: 40px 30px 30px;
+    margin: 40px 20px 30px; /* Kenarlardan biraz daha geniş boşluk */
     height: auto;
     flex-direction: column;
     padding: 4vh 3vw;
     border-radius: 16px;
+    width: auto; /* Genişlik otomatik, parent genişliğine uyum sağlar */
   }
 
   .repair-bg,
@@ -290,8 +291,10 @@ html, body {
   .advantage-section {
     flex-direction: column;
     padding: 4vh 3vw;
-    margin: 0 30px 40px;
+    margin: 20px 20px 40px; /* Üst ve yan boşlukları dengeli yap */
     text-align: center;
+    width: auto; /* Genişlik otomatik */
+    gap: 30px; /* Bölümler arası boşluk */
   }
 
   .advantage-text {
@@ -308,9 +311,10 @@ html, body {
 
 @media (max-width: 600px) {
   .repair-highlight {
-    margin: 30px 20px 30px;
+    margin: 30px 15px 30px;
     padding: 3vh 2vw;
     height: auto;
+    width: auto;
   }
 
   .repair-bg,
@@ -338,5 +342,10 @@ html, body {
     justify-content: center;
     text-align: center;
     font-size: 1rem;
+  }
+
+  .advantage-section {
+    margin: 20px 15px 40px;
+    gap: 20px; /* Daha sıkışık ama rahat */
   }
 }

@@ -191,7 +191,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
-  background: black;
+  background: none;
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
